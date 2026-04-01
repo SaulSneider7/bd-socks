@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Producto 1",
+    "price": 35.00,
+    "description": "Calcetines de algodón orgánico de 200 hilos, perfectos para el día a día con un acabado impecable.",
+    "image": "/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Producto 2",
+    "price": 35.00,
+    "description": "Suavidad superior y transpirabilidad excepcional en un diseño blanco puro.",
+    "image": "/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Producto 3",
+    "price": 38.00,
+    "description": "Elegancia europea con ajuste perfecto y sin costuras para máxima comodidad.",
+    "image": "/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Producto 4",
+    "price": 95.00,
+    "description": "Colección esencial de tres pares en tonos neutros: Negro, Gris y Azul Marino.",
+    "image": "/4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Producto 5",
+    "price": 35.00,
+    "description": "Resistencia excepcional y textura refinada para el caballero moderno.",
+    "image": "/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Producto 6",
+    "price": 40.00,
+    "description": "Diseño sofisticado con patrón de rayas en blanco y negro, algodón certificado.",
+    "image": "/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Producto 7",
+    "price": 35.00,
+    "description": "Elegancia europea con ajuste perfecto y sin costuras para máxima comodidad.",
+    "image": "/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Producto 8",
+    "price": 35.00,
+    "description": "Resistencia excepcional y textura refinada para el caballero moderno.",
+    "image": "/8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Producto 9",
+    "price": 40.00,
+    "description": "Diseño sofisticado con patrón de rayas en blanco y negro, algodón certificado.",
+    "image": "/9.jpg"
+  }
+]
