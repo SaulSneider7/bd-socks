@@ -55,7 +55,7 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
                 />
                 <button
                   onClick={() => addToCart(product)}
-                  className="absolute bottom-4 left-4 right-4 bg-[#4A5D4E] text-white py-3 rounded-lg text-xs uppercase tracking-widest font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-[#3D4D40] shadow-lg shadow-[#4A5D4E]/20"
+                  className="absolute bottom-4 left-4 right-4 bg-[#4A5D4E] text-white py-3 rounded-lg text-xs uppercase tracking-widest font-bold opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-[#3D4D40] shadow-lg shadow-[#4A5D4E]/20"
                 >
                   Añadir al Carrito
                 </button>

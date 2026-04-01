@@ -35,13 +35,20 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#F9F7F2]/80 backdrop-blur-md border-b border-[#1A1A1A]/5">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link 
+    <nav className={`fixed top-0 w-full z-50 border-b border-[#1A1A1A]/10 transition-all duration-300 ${isMenuOpen
+      ? 'bg-white'
+      : 'bg-white shadow-md md:bg-[#F9F7F2]/80 md:backdrop-blur-md md:shadow-none'
+      }`}>
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50">
+        <Link
           to="/"
-          className="text-2xl font-serif font-bold tracking-tighter text-[#1A1A1A]"
+          className="flex items-center"
         >
-          BD SOCKS
+          <img
+            src="/logo.png"
+            alt="BD SOCKS"
+            className="w-35 object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -60,9 +67,8 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
                   }
                 }
               }}
-              className={`text-sm uppercase tracking-widest transition-colors hover:text-[#4A5D4E] ${
-                location.pathname === link.path ? 'font-bold underline underline-offset-8 text-[#4A5D4E]' : 'text-[#1A1A1A]/70'
-              }`}
+              className={`text-sm uppercase tracking-widest transition-colors hover:text-[#4A5D4E] ${location.pathname === link.path ? 'font-bold underline underline-offset-8 text-[#4A5D4E]' : 'text-[#1A1A1A]/70'
+                }`}
             >
               {link.name}
             </Link>
@@ -70,7 +76,7 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
         </div>
 
         <div className="flex items-center space-x-4">
-          <button 
+          <button
             onClick={() => setIsCartOpen(true)}
             className="relative p-2 hover:bg-[#1A1A1A]/5 rounded-full transition-colors"
           >
@@ -81,7 +87,7 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
               </span>
             )}
           </button>
-          <button 
+          <button
             className="md:hidden p-2 text-[#1A1A1A]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -97,7 +103,7 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-[#F9F7F2] pt-24 px-6 flex flex-col space-y-6"
+            className="fixed inset-0 z-40 bg-white pt-24 px-6 flex flex-col space-y-6"
           >
             {navLinks.map(link => (
               <button
