@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faHashtag, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faHashtag, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 interface GalleryItem {
     id: number;
