@@ -1,91 +1,128 @@
+import React from "react";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faHashtag, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 interface GalleryItem {
     id: number;
-    type: "image" | "video";
     src: string;
     alt: string;
+    category?: string;
 }
 
 const galleryItems: GalleryItem[] = [
-    { id: 1, type: "video", src: "/video_tienda.mp4", alt: "Video estilo TikTok calcetines" },
-    { id: 2, type: "image", src: "/galeria1.jpeg", alt: "Calcetines BD SOCKS estilo alto" },
-    { id: 3, type: "image", src: "/galeria2.jpeg", alt: "Calcetines BD SOCKS diseño cuadrado" },
-    { id: 4, type: "video", src: "/video2.mp4", alt: "Video dinámico calcetines" },
-    { id: 5, type: "image", src: "/galeria3.jpeg", alt: "Calcetines BD SOCKS tendencia" },
-    { id: 6, type: "image", src: "/galeria4.jpeg", alt: "Calcetines BD SOCKS minimalista" },
-    { id: 7, type: "image", src: "/galeria5.png", alt: "Calcetines BD SOCKS urbano" },
-    { id: 8, type: "image", src: "/galeria6.png", alt: "Calcetines BD SOCKS detalle" },
-    { id: 9, type: "image", src: "/galeria8.png", alt: "Detalle de colección BD SOCKS" },
-    { id: 10, type: "image", src: "/galeria7.png", alt: "Nueva colección BD SOCKS" },
-    { id: 11, type: "video", src: "/video.mp4", alt: "Video nueva colección" },
+    { id: 1, src: "/galeria1.jpeg", alt: "Calcetines BD SOCKS estilo alto", category: "Urban" },
+    { id: 2, src: "/galeria2.jpeg", alt: "Calcetines BD SOCKS diseño cuadrado", category: "Classic" },
+    { id: 3, src: "/galeria3.jpeg", alt: "Calcetines BD SOCKS tendencia", category: "New" },
+    { id: 4, src: "/galeria4.jpeg", alt: "Calcetines BD SOCKS minimalista", category: "Essential" },
+    { id: 5, src: "/galeria5.png", alt: "Calcetines BD SOCKS urbano", category: "Street" },
+    { id: 6, src: "/galeria6.png", alt: "Calcetines BD SOCKS detalle", category: "Detail" },
+    { id: 7, src: "/galeria7.png", alt: "Nueva colección BD SOCKS", category: "Limited" },
+    { id: 8, src: "/galeria8.png", alt: "Detalle de colección BD SOCKS", category: "Collection" },
 ];
 
 const Gallery: React.FC = () => {
     return (
         <section id="gallery" className="py-20 md:py-24 bg-[#F9F7F2]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12 md:mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#1A1A1A] mb-4"
-                    >
-                        Nuestra Galería
-                    </motion.h2>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 24 }}
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.08 }}
-                        className="text-base sm:text-lg text-[#1A1A1A]/70 max-w-2xl mx-auto"
+                        className="text-4xl md:text-5xl font-serif font-bold text-[#1A1A1A] mb-4"
                     >
-                        Explora el estilo y la calidad de BD SOCKS en cada detalle.
-                    </motion.p>
+                        Nuestra <span className="text-[#B59410] italic">Galería</span>
+                    </motion.h2>
+                    <div className="w-20 h-1 bg-[#B59410] mx-auto mb-6" />
+                    <p className="text-lg text-[#1A1A1A]/60 max-w-2xl mx-auto font-light">
+                        Calidad excepcional en cada hilo. Descubre la colección completa de BD SOCKS.
+                    </p>
                 </div>
 
-                <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 [column-fill:_balance]">
+                {/* Grid Uniforme */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                     {galleryItems.map((item, index) => (
                         <motion.div
                             key={item.id}
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.15 }}
-                            transition={{ duration: 0.45, delay: index * 0.04 }}
-                            className="mb-4 break-inside-avoid"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            className="group relative aspect-square overflow-hidden rounded-xl bg-white shadow-md hover:shadow-2xl transition-all duration-500"
                         >
-                            <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-300">
-                                {item.type === "image" ? (
-                                    <img
-                                        src={item.src}
-                                        alt={item.alt}
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer"
-                                        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                                    />
-                                ) : (
-                                    <video
-                                        src={item.src}
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        preload="metadata"
-                                        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                                    />
-                                )}
-
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                    <span className="text-white text-xs sm:text-sm font-medium tracking-wider uppercase">
-                                        Ver más
-                                    </span>
-                                </div>
-                            </div>
+                            {/* Imagen con Aspect Ratio Controlado */}
+                            <img
+                                src={item.src}
+                                alt={item.alt}
+                                loading="lazy"
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            />
+                            
+                            {/* Borde Interno Decorativo al hacer Hover */}
+                            <div className="absolute inset-4 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                         </motion.div>
                     ))}
+                </div>
+
+                {/* Footer de Galería Premium */}
+                <div className="mt-20 border-t border-[#1A1A1A]/5 pt-12">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                        {/* Lado Izquierdo: Branding/Social */}
+                        <div className="flex flex-col items-center md:items-start">
+                            <div className="flex items-center gap-2 mb-2">
+                                <div className="w-8 h-8 rounded-lg bg-[#B59410] flex items-center justify-center text-white">
+                                    <FontAwesomeIcon icon={faHashtag} size="sm" />
+                                </div>
+                                <span className="text-xl font-serif font-bold text-[#1A1A1A]">BDSOCKS_STYLE</span>
+                            </div>
+                            <p className="text-[#1A1A1A]/50 text-sm font-light">
+                                Únete a nuestra comunidad y comparte tu look.
+                            </p>
+                        </div>
+
+                        {/* Centro: CTA Principal */}
+                        <Link to="/catalogo" className="relative group block">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="relative w-full px-10 py-4 overflow-hidden rounded-full bg-[#1A1A1A] text-white font-bold transition-all duration-300"
+                            >
+                                {/* Fondo que se llena al hacer hover */}
+                                <div className="absolute inset-0 w-0 bg-[#B59410] transition-all duration-[400px] ease-out group-hover:w-full" />
+
+                                <span className="relative z-10 flex items-center justify-center gap-3">
+                                    Explorar Colección Completa
+                                    <FontAwesomeIcon
+                                        icon={faArrowRight}
+                                        className="group-hover:translate-x-1 transition-transform"
+                                    />
+                                </span>
+                            </motion.button>
+                        </Link>
+
+                        {/* Lado Derecho: Enlace Social */}
+                        <a
+                            href="https://instagram.com/bdsocks"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
+                        >
+                            <div className="text-right hidden sm:block">
+                                <p className="text-[#1A1A1A] font-bold text-sm">Síguenos en Instagram</p>
+                                <p className="text-[#B59410] text-xs font-medium">@bdsocks_oficial</p>
+                            </div>
+                            <div className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl text-[#1A1A1A] group-hover:text-[#B59410] transition-colors duration-300">
+                                <FontAwesomeIcon icon={faInstagram} />
+                            </div>
+                        </a>
+
+                    </div>
                 </div>
             </div>
         </section>
