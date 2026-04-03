@@ -6,7 +6,7 @@ const Locations = () => {
   const locations = [
     {
       title: "Cencosud Retail",
-      logo: "https://picsum.photos/seed/cencosud/200/100",
+      logo: "/cenco-logo.jpeg",
       items: [
         "C.C. Plaza Lima Sur - Chorrillos",
         "Cenco Metro Canadá"

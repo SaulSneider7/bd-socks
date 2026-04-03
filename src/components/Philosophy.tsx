@@ -1,6 +1,6 @@
 const Philosophy = () => {
   return (
-    <section id="philosophy" className="py-32 px-6 bg-[#F1EFE9]">
+    <section id="about" className="py-32 px-6 bg-[#F1EFE9]">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div className="order-2 lg:order-1">
@@ -14,21 +14,11 @@ const Philosophy = () => {
             <h2 className="text-5xl font-serif mb-8 leading-tight text-[#1A1A1A]">Alma Peruana, <br /><span className="italic text-[#4A5D4E]">Diseño Europeo.</span></h2>
             <div className="space-y-6 text-[#1A1A1A]/70 leading-relaxed">
               <p>
-                BD SOCKS nace de la pasión por los detalles y la búsqueda de la perfección. Inspirados en la elegancia atemporal del diseño europeo, decidimos utilizar el recurso más valioso de nuestra tierra: el algodón orgánico peruano.
+                <strong> BD SOCKS es una marca peruana de calcetines de alta gama, elaborados con algodón orgánico certificado y diseñados bajo los más altos estándares internacionales.</strong> Inspirados en la sofisticación del diseño europeo, ofrecemos productos reconocidos por su <strong>durabilidad, suavidad superior y acabado impecable</strong>, gracias a un tejido de <strong>200 hilos</strong> que garantiza una textura refinada y resistencia excepcional.
               </p>
               <p>
-                No solo fabricamos calcetines; creamos una prenda esencial que redefine el lujo cotidiano. Cada par es el resultado de un proceso meticuloso donde la durabilidad y la suavidad superior se encuentran.
+                Nuestros calcetines brindan <strong>comodidad absoluta</strong>, con un <strong>ajuste perfecto</strong>, diseño <strong>sin costuras</strong>, alta transpirabilidad y propiedades <strong>hipoalergénicas</strong> que cuidan la piel y evitan irritaciones. Cada par ofrece una experiencia fresca, protegida y confortable desde el primer paso.
               </p>
-              <div className="pt-6 grid grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-[#4A5D4E] font-bold text-sm uppercase tracking-widest mb-2">Misi&oacute;n</h4>
-                  <p className="text-xs">Elevar el estándar de comodidad y estilo en el mercado latinoamericano.</p>
-                </div>
-                <div>
-                  <h4 className="text-[#4A5D4E] font-bold text-sm uppercase tracking-widest mb-2">Visi&oacute;n</h4>
-                  <p className="text-xs">Ser reconocidos globalmente como el referente de calcetines de algodón orgánico.</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

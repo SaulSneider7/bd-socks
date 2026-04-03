@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const QualityPillars = () => {
   return (
-    <section id="about" className="py-32 bg-[#1A1A1A] text-white px-6">
+    <section className="py-32 bg-[#1A1A1A] text-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <span className="text-xs uppercase tracking-[0.4em] text-[#C5A059] font-bold mb-4 block">Calidad Sin Compromisos</span>
@@ -29,7 +29,7 @@ const QualityPillars = () => {
             className="space-y-6 text-center"
           >
             <div className="text-6xl font-serif italic text-[#4A5D4E]">02</div>
-            <h3 className="text-2xl font-serif">Algodón Certificado</h3>
+            <h3 className="text-2xl font-serif">Algodón Orgánico</h3>
             <p className="text-white/50 text-sm leading-relaxed">
               Utilizamos algodón orgánico que cuida tu piel y el medio ambiente. Propiedades hipoalergénicas y alta transpirabilidad garantizadas.
             </p>

@@ -1,65 +1,74 @@
 [
   {
     "id": 1,
-    "name": "Producto 1",
-    "price": 35.00,
-    "description": "Calcetines de algodón orgánico de 200 hilos, perfectos para el día a día con un acabado impecable.",
-    "image": "/1.jpg"
+    "name": "Crema Fit",
+    "price": 28.00,
+    "description": "Cod. 1090201",
+    "image": "/1.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 2,
-    "name": "Producto 2",
-    "price": 35.00,
-    "description": "Suavidad superior y transpirabilidad excepcional en un diseño blanco puro.",
-    "image": "/2.jpg"
+    "name": "Jade Tricolor",
+    "price": 28.00,
+    "description": "Cod. 1050302",
+    "image": "/2.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 3,
-    "name": "Producto 3",
-    "price": 38.00,
-    "description": "Elegancia europea con ajuste perfecto y sin costuras para máxima comodidad.",
-    "image": "/3.jpg"
+    "name": "Blend Socks",
+    "price": 28.00,
+    "description": "Cod. 1080401",
+    "image": "/3.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 4,
-    "name": "Producto 4",
-    "price": 95.00,
-    "description": "Colección esencial de tres pares en tonos neutros: Negro, Gris y Azul Marino.",
-    "image": "/4.jpg"
+    "name": "Beige Vibe",
+    "price": 28.00,
+    "description": "Cod. 1060301",
+    "image": "/4.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 5,
-    "name": "Producto 5",
-    "price": 35.00,
-    "description": "Resistencia excepcional y textura refinada para el caballero moderno.",
-    "image": "/5.jpg"
+    "name": "Base Socks",
+    "price": 28.00,
+    "description": "Cod. 1030303",
+    "image": "/5.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 6,
-    "name": "Producto 6",
-    "price": 40.00,
-    "description": "Diseño sofisticado con patrón de rayas en blanco y negro, algodón certificado.",
-    "image": "/6.jpg"
+    "name": "Blanco Step",
+    "price": 28.00,
+    "description": "Cod. 1020303",
+    "image": "/6.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 7,
-    "name": "Producto 7",
-    "price": 35.00,
-    "description": "Elegancia europea con ajuste perfecto y sin costuras para máxima comodidad.",
-    "image": "/7.jpg"
+    "name": "Avo Low Cut",
+    "price": 25.00,
+    "description": "Cod. 1010102",
+    "image": "/7.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 8,
-    "name": "Producto 8",
-    "price": 35.00,
-    "description": "Resistencia excepcional y textura refinada para el caballero moderno.",
-    "image": "/8.jpg"
+    "name": "Zebra Carina",
+    "price": 25.00,
+    "description": "Cod. 1040102",
+    "image": "/8.webp",
+    "sizes": ["36/40"]
   },
   {
     "id": 9,
-    "name": "Producto 9",
-    "price": 40.00,
-    "description": "Diseño sofisticado con patrón de rayas en blanco y negro, algodón certificado.",
-    "image": "/9.jpg"
+    "name": "Lumin Socks",
+    "price": 25.00,
+    "description": "Cod. 1070404",
+    "image": "/9.webp",
+    "sizes": ["36/40"]
   }
 ]

@@ -19,7 +19,7 @@ const Hero = () => {
             <span className="italic">en cada paso.</span>
           </h1>
           <p className="text-lg text-black/60 max-w-md mb-10 leading-relaxed">
-            Calcetines de alta gama elaborados con algodón orgánico de 200 hilos. Diseñados en Perú bajo estándares internacionales para ofrecerte una experiencia de confort absoluto.
+            Calcetines de alta gama elaborados con algodón orgánico de 200 hilos, desarrollados bajo estándares internacionales y diseños europeos para ofrecerte una experiencia de confort absoluto.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link 
@@ -51,7 +51,7 @@ const Hero = () => {
             referrerPolicy="no-referrer"
           />
           <div className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-white max-w-[240px]">
-            <p className="text-xs uppercase tracking-widest font-bold mb-2">Certificación Orgánica</p>
+            <p className="text-xs uppercase tracking-widest font-bold mb-2">Algodón Orgánico</p>
             <p className="text-sm italic opacity-80">"El algodón más suave que tus pies hayan sentido jamás."</p>
           </div>
         </motion.div>

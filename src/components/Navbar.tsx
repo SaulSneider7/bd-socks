@@ -12,6 +12,7 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
   const navLinks = [
     { name: 'Inicio', path: '/' },
     { name: 'Catálogo', path: '/catalogo' },
+    { name: 'Galería', path: '/#gallery' },
     { name: 'Nosotros', path: '/#about' },
     { name: 'Tiendas', path: '/#locations' },
   ];
