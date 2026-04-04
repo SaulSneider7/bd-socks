@@ -13,14 +13,14 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
-    { id: 1, src: "/galeria1.jpeg", alt: "Calcetines BD SOCKS estilo alto", category: "Urban" },
-    { id: 2, src: "/galeria2.jpeg", alt: "Calcetines BD SOCKS diseño cuadrado", category: "Classic" },
-    { id: 3, src: "/galeria3.jpeg", alt: "Calcetines BD SOCKS tendencia", category: "New" },
-    { id: 4, src: "/galeria4.jpeg", alt: "Calcetines BD SOCKS minimalista", category: "Essential" },
-    { id: 5, src: "/galeria5.png", alt: "Calcetines BD SOCKS urbano", category: "Street" },
-    { id: 6, src: "/galeria6.png", alt: "Calcetines BD SOCKS detalle", category: "Detail" },
-    { id: 7, src: "/galeria7.png", alt: "Nueva colección BD SOCKS", category: "Limited" },
-    { id: 8, src: "/galeria8.png", alt: "Detalle de colección BD SOCKS", category: "Collection" },
+    { id: 1, src: "/galeria1.webp", alt: "Calcetines BD SOCKS estilo alto", category: "Urban" },
+    { id: 2, src: "/galeria2.webp", alt: "Calcetines BD SOCKS diseño cuadrado", category: "Classic" },
+    { id: 3, src: "/galeria3.webp", alt: "Calcetines BD SOCKS tendencia", category: "New" },
+    { id: 4, src: "/galeria4.webp", alt: "Calcetines BD SOCKS minimalista", category: "Essential" },
+    { id: 5, src: "/galeria5.webp", alt: "Calcetines BD SOCKS urbano", category: "Street" },
+    { id: 6, src: "/galeria6.webp", alt: "Calcetines BD SOCKS detalle", category: "Detail" },
+    { id: 7, src: "/galeria7.webp", alt: "Nueva colección BD SOCKS", category: "Limited" },
+    { id: 8, src: "/galeria8.webp", alt: "Detalle de colección BD SOCKS", category: "Collection" },
 ];
 
 const Gallery: React.FC = () => {
@@ -108,7 +108,7 @@ const Gallery: React.FC = () => {
 
                         {/* Lado Derecho: Enlace Social */}
                         <a
-                            href="https://instagram.com/bdsocks"
+                            href="https://www.instagram.com/bdsocks.latam"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center gap-4 hover:opacity-80 transition-opacity"

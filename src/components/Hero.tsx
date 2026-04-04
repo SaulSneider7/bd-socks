@@ -45,7 +45,7 @@ const Hero = () => {
           className="relative aspect-[4/5] bg-neutral-100 rounded-3xl overflow-hidden shadow-2xl"
         >
           <img 
-            src="/hero.jpg" 
+            src="/hero.webp" 
             alt="BD SOCKS Premium"
             className="w-full h-full object-cover brightness-90 hover:scale-105 transition-transform duration-[2s]"
             referrerPolicy="no-referrer"
