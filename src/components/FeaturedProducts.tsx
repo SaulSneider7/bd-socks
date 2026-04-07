@@ -21,28 +21,61 @@ const FeaturedProducts = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
           {productsData.slice(0, 3).map((product) => (
             <Link key={product.id} to="/catalogo" className="group block">
-              <div className="relative aspect-[3/4] bg-[#F1EFE9] rounded-[2rem] overflow-hidden mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute top-6 left-6">
-                  <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
-                    <FontAwesomeIcon icon={faStar} className="text-[#4A5D4E] text-[10px]" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]">Premium</span>
+              <div className="rounded-[2rem] p-[1px] bg-gradient-to-b from-[#f8f6f1] via-[#e8e1d4] to-[#d8d0c2] shadow-[0_12px_35px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_18px_50px_rgba(0,0,0,0.10)]">
+                <div className="h-full rounded-[2rem] overflow-hidden bg-[#F7F3EB] flex flex-col">
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      referrerPolicy="no-referrer"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/10" />
+
+                    <div className="absolute top-5 left-5">
+                      <div className="bg-white/75 backdrop-blur-xl border border-white/60 px-4 py-2 rounded-full flex items-center gap-2 shadow-md">
+                        <FontAwesomeIcon icon={faStar} className="text-[#4A5D4E] text-[10px]" />
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#1A1A1A]">
+                          Premium
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="px-4">
-                <h3 className="font-serif text-2xl mb-2 text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors">{product.name}</h3>
-                <div className="flex items-center justify-between">
-                  <p className="text-[#1A1A1A]/40 text-xs uppercase tracking-widest font-bold">Algodón Orgánico</p>
-                  <p className="text-[#4A5D4E] font-bold text-lg">S/ {product.price.toFixed(2)}</p>
+
+                  <div className="flex flex-col justify-between flex-1 px-6 py-6 bg-[#F7F3EB] border-t border-[#E7E0D2]">
+                    <div>
+                      <p className="text-[11px] uppercase tracking-[0.25em] text-[#1A1A1A]/40 font-semibold mb-3">
+                        Algodón Orgánico
+                      </p>
+
+                      <h3 className="font-serif text-[1.7rem] leading-[1.15] text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors duration-300">
+                        {product.name}
+                      </h3>
+
+                      <p className="mt-3 text-[15px] leading-relaxed text-[#1A1A1A]/55 max-w-[26ch]">
+                        Diseño cómodo, moderno y versátil para elevar tu estilo diario.
+                      </p>
+                    </div>
+
+                    <div className="mt-6 pt-5 border-t border-[#E7E0D2] flex items-end justify-between">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.22em] text-[#1A1A1A]/35 font-semibold mb-1">
+                          Edición especial
+                        </p>
+                        <span className="text-sm text-[#1A1A1A]/50">
+                          Disponible ahora
+                        </span>
+                      </div>
+
+                      <p className="text-[#4A5D4E] font-semibold text-[1.7rem] tracking-tight">
+                        S/ {product.price.toFixed(2)}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Link>

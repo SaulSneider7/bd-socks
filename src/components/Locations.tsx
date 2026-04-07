@@ -8,23 +8,38 @@ const Locations = () => {
       title: "Cencosud Retail",
       logo: "/cenco-logo.jpeg",
       items: [
-        "C.C. Plaza Lima Sur - Chorrillos",
-        "Cenco Metro Canadá"
+        {
+          label: "C.C. Plaza Lima Sur - Chorrillos",
+          href: "https://maps.app.goo.gl/BPnJozvraXRtLJiU6"
+        },
+        {
+          label: "Cenco Metro Canadá",
+          href: "https://maps.app.goo.gl/S7tGTgXpYoW46Gjb6"
+        }
       ]
     },
     {
       title: "MNK Store",
       logo: "/mnk-logo.png",
       items: [
-        "CC. EL Polo 2 Tda. B209 - SURCO",
-        "Av. Cavenecia 225 Tda. 111 - SAN ISIDRO"
+        {
+          label: "CC. El Polo 2 Tda. B209 - Surco",
+          href: "https://maps.app.goo.gl/p5fyWPKwHhuQvpJz6"
+        },
+        {
+          label: "Av. Cavenecia 225 Tda. 111 - San Isidro",
+          href: "https://maps.app.goo.gl/8RhvC8H6tLUEAjYk9"
+        }
       ]
     },
     {
       title: "HOLIDAY'S KIDS",
       logo: "/holiday-logo.png",
       items: [
-        "Showroom La Molina"
+        {
+          label: "Showroom La Molina",
+          href: "https://maps.app.goo.gl/L7ukZrLVoviJ5UYc6"
+        }
       ]
     }
   ];
@@ -36,34 +51,64 @@ const Locations = () => {
           <span className="text-xs uppercase tracking-[0.4em] text-[#C5A059] font-bold mb-4 block">Encuéntranos</span>
           <h2 className="text-5xl font-serif text-[#1A1A1A]">Puntos de Venta</h2>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
           {locations.map((loc, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="bg-white p-10 rounded-3xl luxury-border hover:shadow-xl transition-shadow flex flex-col items-center text-center"
+              className="group h-full rounded-[2rem] p-[1px] bg-gradient-to-b from-[#F4F1E8] via-[#E8E1D4] to-[#D9D0C0] shadow-[0_12px_35px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.10)] transition-all duration-500 hover:-translate-y-1"
             >
-              <div className="h-20 mb-8 flex items-center justify-center transition-all">
-                <img 
-                  src={loc.logo} 
-                  alt={loc.title} 
-                  className="max-h-full max-w-full object-contain"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="h-full rounded-[2rem] bg-white/95 backdrop-blur-sm px-8 py-9 flex flex-col">
+                <div className="flex items-center justify-center h-24 mb-8">
+                  <img
+                    src={loc.logo}
+                    alt={loc.title}
+                    className="max-h-full max-w-[160px] object-contain transition-transform duration-500 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="border-t border-b border-[#4A5D4E]/10 py-5 mb-6 text-center">
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-[#1A1A1A]/35 font-semibold mb-2">
+                    Punto de venta
+                  </p>
+                  <h3 className="text-[1.45rem] leading-tight font-serif text-[#4A5D4E]">
+                    {loc.title}
+                  </h3>
+                </div>
+
+                <div className="flex-1 space-y-4">
+                  {loc.items.map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group/item flex items-start gap-4 rounded-2xl border border-[#4A5D4E]/10 bg-[#FAF8F3] px-5 py-4 transition-all duration-300 hover:border-[#C5A059]/50 hover:bg-[#F7F2E8]"
+                    >
+                      <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-sm border border-[#4A5D4E]/10">
+                        <FontAwesomeIcon
+                          icon={faMapMarkerAlt}
+                          className="text-[#C5A059] text-sm"
+                        />
+                      </div>
+
+                      <div className="flex-1 text-left">
+                        <p className="text-sm leading-relaxed text-[#1A1A1A]/75 group-hover/item:text-[#1A1A1A] transition-colors">
+                          {item.label}
+                        </p>
+                        <span className="mt-2 inline-block text-[11px] font-semibold uppercase tracking-[0.22em] text-[#4A5D4E]/55 group-hover/item:text-[#4A5D4E]">
+                          Ver ubicación
+                        </span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-xl font-serif mb-6 border-b border-[#4A5D4E]/10 pb-4 text-[#4A5D4E] w-full">{loc.title}</h3>
-              <ul className="space-y-4 text-sm text-[#1A1A1A]/70 w-full">
-                {loc.items.map((item, i) => (
-                  <li key={i} className="flex items-start justify-center">
-                    <FontAwesomeIcon icon={faMapMarkerAlt} className="w-4 h-4 mr-3 mt-0.5 shrink-0 text-[#C5A059]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>
@@ -76,8 +121,8 @@ const Locations = () => {
             viewport={{ once: true }}
             className="relative rounded-3xl overflow-hidden shadow-2xl"
           >
-            <img 
-              src="/tienda.jpeg" 
+            <img
+              src="/tienda.jpeg"
               alt="BD SOCKS Physical Store"
               className="w-full h-full object-cover  transition-all duration-1000"
               referrerPolicy="no-referrer"

@@ -17,8 +17,8 @@ const galleryItems: GalleryItem[] = [
     { id: 2, src: "/galeria2.webp", alt: "Calcetines BD SOCKS diseño cuadrado", category: "Classic" },
     { id: 3, src: "/galeria3.webp", alt: "Calcetines BD SOCKS tendencia", category: "New" },
     { id: 4, src: "/galeria4.webp", alt: "Calcetines BD SOCKS minimalista", category: "Essential" },
-    { id: 5, src: "/galeria5.webp", alt: "Calcetines BD SOCKS urbano", category: "Street" },
-    { id: 6, src: "/galeria6.webp", alt: "Calcetines BD SOCKS detalle", category: "Detail" },
+    { id: 5, src: "/cebra.png", alt: "Calcetines BD SOCKS urbano", category: "Street" },
+    { id: 6, src: "/bg-contact.webp", alt: "Calcetines BD SOCKS detalle", category: "Detail" },
     { id: 7, src: "/galeria7.webp", alt: "Nueva colección BD SOCKS", category: "Limited" },
     { id: 8, src: "/galeria8.webp", alt: "Detalle de colección BD SOCKS", category: "Collection" },
 ];
@@ -79,7 +79,7 @@ const Gallery: React.FC = () => {
                                 <div className="w-8 h-8 rounded-lg bg-[#B59410] flex items-center justify-center text-white">
                                     <FontAwesomeIcon icon={faHashtag} size="sm" />
                                 </div>
-                                <span className="text-xl font-serif font-bold text-[#1A1A1A]">BDSOCKS_STYLE</span>
+                                <span className="text-xl font-serif font-bold text-[#1A1A1A] uppercase">Socks whit Stories</span>
                             </div>
                             <p className="text-[#1A1A1A]/50 text-sm font-light">
                                 Únete a nuestra comunidad y comparte tu look.

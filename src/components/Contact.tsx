@@ -63,7 +63,7 @@ const Contact = () => {
 
         <div
           className="text-white p-12 rounded-[2rem] relative overflow-hidden flex flex-col justify-center items-center text-center shadow-2xl bg-cover bg-center"
-          style={{ backgroundImage: "url('/bg-contact.jpg')" }}
+          style={{ backgroundImage: "url('/bg-contact2.webp')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
 
