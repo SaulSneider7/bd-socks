@@ -6,7 +6,7 @@ const Philosophy = () => {
           <div className="order-2 lg:order-1">
             <div className="grid grid-cols-2 gap-4">
               <img src="/nosotros1.jpg" className="rounded-2xl shadow-xl" referrerPolicy="no-referrer" />
-              <img src="/nosotros2.jpg" className="rounded-2xl shadow-xl mt-12" referrerPolicy="no-referrer" />
+              <img src="/nosotros2.webp" className="rounded-2xl shadow-xl mt-12" referrerPolicy="no-referrer" />
             </div>
           </div>
           <div className="order-1 lg:order-2">

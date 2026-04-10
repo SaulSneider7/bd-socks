@@ -18,7 +18,7 @@ const galleryItems: GalleryItem[] = [
     { id: 3, src: "/galeria3.webp", alt: "Calcetines BD SOCKS tendencia", category: "New" },
     { id: 4, src: "/galeria4.webp", alt: "Calcetines BD SOCKS minimalista", category: "Essential" },
     { id: 5, src: "/galeria5.webp", alt: "Calcetines BD SOCKS urbano", category: "Street" },
-    { id: 6, src: "/bg-contact2.webp", alt: "Calcetines BD SOCKS detalle", category: "Detail" },
+    { id: 6, src: "/galeria6.webp", alt: "Calcetines BD SOCKS detalle", category: "Detail" },
     { id: 7, src: "/galeria7.webp", alt: "Nueva colección BD SOCKS", category: "Limited" },
     { id: 8, src: "/galeria8.webp", alt: "Detalle de colección BD SOCKS", category: "Collection" },
 ];
