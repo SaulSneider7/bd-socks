@@ -27,80 +27,112 @@ const ProductCard: React.FC<{
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#1A1A1A]/5"
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative overflow-hidden rounded-[28px] bg-white border border-[#1A1A1A]/6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)] transition-all duration-500"
     >
-      <div className="relative aspect-[3/4] bg-[#F1EFE9] overflow-hidden rounded-2xl mb-6 shadow-inner">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 cursor-pointer"
-          referrerPolicy="no-referrer"
-          onClick={() => onPreview(product.image)}
-        />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#F8F7F3] pointer-events-none" />
 
-        {/* Quick Actions */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2 translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
-          <button
+      <div className="relative p-4">
+        <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden bg-[#F3F0E8]">
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10 z-[1]" />
+
+          <img
+            src={product.image}
+            alt={product.name}
+            referrerPolicy="no-referrer"
             onClick={() => onPreview(product.image)}
-            className="w-10 h-10 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center text-[#1A1A1A] hover:bg-[#4A5D4E] hover:text-white transition-colors shadow-lg"
-            title="Vista Previa"
-          >
-            <FontAwesomeIcon icon={faExpand} className="text-sm" />
-          </button>
-        </div>
+            className="w-full h-full object-cover cursor-pointer transition-transform duration-700 group-hover:scale-[1.08]"
+          />
 
-        {/* Mobile Add to Cart (Always visible) */}
-        <button
-          onClick={() => addToCart(product, selectedSize)}
-          className="md:hidden absolute bottom-4 left-4 right-4 bg-[#4A5D4E] text-white py-3 rounded-xl text-xs uppercase tracking-widest font-bold shadow-lg shadow-[#4A5D4E]/20"
-        >
-          <FontAwesomeIcon icon={faCartPlus} className="mr-2" />
-          Añadir
-        </button>
-
-        {/* Desktop Add to Cart (Hover) */}
-        <div className="hidden md:flex absolute inset-x-4 bottom-4 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button
-            onClick={() => addToCart(product, selectedSize)}
-            className="w-full bg-[#4A5D4E] text-white py-4 rounded-xl text-xs uppercase tracking-widest font-bold shadow-xl shadow-[#4A5D4E]/30 hover:bg-[#3D4D40] transition-colors"
-          >
-            <FontAwesomeIcon icon={faCartPlus} className="mr-2" />
-            Añadir al Carrito
-          </button>
-        </div>
-      </div>
-
-      <div className="px-2">
-        <div className="flex justify-between items-start mb-4">
-          <div>
-            <h3 className="text-2xl font-serif mb-1 text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors">{product.name}</h3>
-            <p className="text-[10px] text-[#1A1A1A]/40 uppercase tracking-[0.2em] font-bold">{product.description.split(',')[0]}</p>
+          <div className="absolute top-4 left-4 z-10">
+            <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-bold text-[#4A5D4E] shadow-lg">
+              Destacado
+            </span>
           </div>
-          <span className="font-bold text-lg text-[#4A5D4E]">S/ {product.price.toFixed(2)}</span>
-        </div>
 
-        {product.sizes && (
-          <div className="flex items-center gap-2">
-            <span className="uppercase tracking-widest text-[#1A1A1A]/40 font-bold">Talla:</span>
-            <div className="flex gap-1">
-              {product.sizes.map(size => (
-                <button
-                  key={size}
-                  onClick={() => setSelectedSize(size)}
-                  className={`w-16 h-10 rounded-lg font-bold transition-all border ${selectedSize === size
-                      ? 'bg-[#4A5D4E] text-white border-[#4A5D4E] shadow-md'
-                      : 'bg-white text-[#1A1A1A]/60 border-[#1A1A1A]/10 hover:border-[#4A5D4E]'
-                    }`}
-                >
-                  {size}
-                </button>
-              ))}
+          <div className="absolute top-4 right-4 z-10 flex flex-col gap-2 translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
+            <button
+              onClick={() => onPreview(product.image)}
+              className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1A1A1A] shadow-lg hover:bg-[#4A5D4E] hover:text-white transition-colors"
+              title="Vista previa"
+            >
+              <FontAwesomeIcon icon={faExpand} className="text-sm" />
+            </button>
+          </div>
+
+          <div className="absolute inset-x-4 bottom-4 z-10">
+            <button
+              onClick={() => addToCart(product, selectedSize)}
+              className="w-full md:hidden rounded-2xl bg-[#4A5D4E] text-white py-3.5 text-xs uppercase tracking-[0.22em] font-bold shadow-[0_14px_30px_rgba(74,93,78,0.28)] active:scale-[0.98] transition-all"
+            >
+              <FontAwesomeIcon icon={faCartPlus} className="mr-2" />
+              Añadir
+            </button>
+
+            <div className="hidden md:block translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+              <button
+                onClick={() => addToCart(product, selectedSize)}
+                className="w-full rounded-2xl bg-[#4A5D4E] text-white py-4 text-xs uppercase tracking-[0.24em] font-bold shadow-[0_18px_35px_rgba(74,93,78,0.30)] hover:bg-[#3D4D40] transition-all"
+              >
+                <FontAwesomeIcon icon={faCartPlus} className="mr-2" />
+                Añadir al carrito
+              </button>
             </div>
           </div>
-        )}
+        </div>
+
+        <div className="relative px-2 pt-5 pb-2">
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <div className="min-w-0">
+              <h3 className="text-[1.45rem] leading-tight font-serif text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors">
+                {product.name}
+              </h3>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.24em] font-bold text-[#1A1A1A]/38">
+                {product.description.split(',')[0]}
+              </p>
+            </div>
+
+            <div className="shrink-0 text-right">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-[#1A1A1A]/35 font-bold mb-1">
+                Precio
+              </p>
+              <span className="inline-block rounded-full bg-[#EEF3EE] px-4 py-2 text-lg font-bold text-[#4A5D4E] shadow-sm">
+                S/ {product.price.toFixed(2)}
+              </span>
+            </div>
+          </div>
+
+          {product.sizes && (
+            <div className="mt-4">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-[#1A1A1A]/45">
+                  Talla
+                </span>
+                <div className="h-px flex-1 bg-[#1A1A1A]/8" />
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {product.sizes.map(size => (
+                  <button
+                    key={size}
+                    onClick={() => setSelectedSize(size)}
+                    className={`min-w-[62px] h-11 px-4 rounded-xl text-sm font-bold border transition-all ${
+                      selectedSize === size
+                        ? 'bg-[#4A5D4E] text-white border-[#4A5D4E] shadow-[0_10px_20px_rgba(74,93,78,0.18)]'
+                        : 'bg-white text-[#1A1A1A]/70 border-[#1A1A1A]/10 hover:border-[#4A5D4E]/40 hover:text-[#4A5D4E] hover:bg-[#F8FAF8]'
+                    }`}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );
