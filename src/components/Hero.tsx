@@ -30,7 +30,7 @@ const Hero = () => {
               <FontAwesomeIcon icon={faChevronRight} className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <button 
-              onClick={() => document.getElementById('philosophy')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex border border-[#4A5D4E]/20 text-[#4A5D4E] px-10 py-4 rounded-full text-sm uppercase tracking-widest hover:bg-[#4A5D4E]/5 transition-all items-center"
             >
               Nuestra Historia
