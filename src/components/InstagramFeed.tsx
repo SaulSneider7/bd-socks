@@ -4,7 +4,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const instagramPosts = [
-    { id: 1, image: "/instagram1.png", url: "https://www.instagram.com/p/DVrb9WjjjdU/?hl=es&img_index=3" },
+    { id: 1, image: "/galeria5.webp", url: "https://www.instagram.com/p/DW9-QYBjm3c/?img_index=1" },
     { id: 2, image: "/instagram2.png", url: "https://www.instagram.com/p/DVrKFaoDlZx/?hl=es&img_index=3" },
     { id: 3, image: "/instagram3.png", url: "https://www.instagram.com/p/DTOTwKHksyv/?hl=es&img_index=1" },
     { id: 4, image: "/instagram4.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=3" },
