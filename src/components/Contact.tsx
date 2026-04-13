@@ -32,8 +32,8 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faPhone} className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-xs uppercase tracking-widest text-[#1A1A1A]/40 font-bold">Teléfono</div>
-                <div className="text-xl font-serif text-[#1A1A1A]">967 395 991</div>
+                <div className="text-xs uppercase tracking-widest text-[#1A1A1A]/40 font-bold">Tel&eacute;fono</div>
+                <div className="text-xl font-serif text-[#1A1A1A]">+51 967 395 991</div>
               </div>
             </a>
           </div>
