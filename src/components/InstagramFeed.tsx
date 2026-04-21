@@ -9,7 +9,7 @@ const instagramPosts = [
     { id: 3, image: "/instagram3.webp", url: "https://www.instagram.com/bdsocks.latam/" },
     { id: 4, image: "/instagram4.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=3" },
     { id: 5, image: "/instagram5.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=4" },
-    { id: 6, image: "/instagram6.webp", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=6" },
+    { id: 6, image: "/instagram6.webp", url: "https://www.instagram.com/holidayskidsoriginal" },
 ];
 
 const InstagramFeed = () => {
