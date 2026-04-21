@@ -10,7 +10,7 @@ const Footer = () => (
         <div className="space-y-6">
           <div className="text-2xl font-serif tracking-tighter text-[#C5A059]">BD SOCKS</div>
           <p className="text-white/50 text-sm leading-relaxed max-w-xs">
-            Elevando el estándar de los calcetines a través del diseño europeo y el algodón orgánico peruano de 200 hilos.
+            Elevando el estándar de los calcetines a través del diseño europeo y el algodón orgánico de 200 hilos.
           </p>
           <div className="flex space-x-4">
             <a href="https://www.instagram.com/bdsocks.latam/?hl=es" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#4A5D4E] hover:border-[#4A5D4E] transition-all">
