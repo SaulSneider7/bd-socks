@@ -10,7 +10,7 @@ const Footer = () => (
         <div className="space-y-6">
           <div className="text-2xl font-serif tracking-tighter text-[#C5A059]">BD SOCKS</div>
           <p className="text-white/50 text-sm leading-relaxed max-w-xs">
-            Elevando el estándar de los calcetines a través del diseño europeo y el algodón orgánico de 200 hilos.
+            Elevando el estándar de los calcetines a través del diseño europeo y el algodón orgánico peruano de 200 hilos.
           </p>
           <div className="flex space-x-4">
             <a href="https://www.instagram.com/bdsocks.latam/?hl=es" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#4A5D4E] hover:border-[#4A5D4E] transition-all">
@@ -21,7 +21,7 @@ const Footer = () => (
             </a>
           </div>
         </div>
-        
+
         <div>
           <h4 className="text-xs uppercase tracking-[0.3em] font-bold mb-8 text-[#C5A059]/60">Navegación</h4>
           <ul className="space-y-4 text-sm">
@@ -50,13 +50,19 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      
-      <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] font-bold text-white/30">
-        <div>© 2024 BD SOCKS PERÚ. TODOS LOS DERECHOS RESERVADOS.</div>
-        <div className="flex items-center">
-          realizado por <a href="https://tu-sitioweb.com" target="_blank" rel="noreferrer" className="text-white mx-1 hover:text-[#C5A059] transition-colors flex items-center">
-            <span className="mr-1"> &lt;/&gt;</span>Tu SitioWeb
-          </a>
+
+      <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] font-bold text-white/30 text-center md:text-left">
+        <div className="space-y-1">
+          <div>© {new Date().getFullYear()} BD SOCKS PERÚ. TODOS LOS DERECHOS RESERVADOS.</div>
+          <div >BD DRY CLEAN EIRL | RUC: 20612173584</div>
+        </div>
+        <div className="flex flex-col items-center md:items-end gap-1">
+          <div className="text-white/20">ELEGANTE • CALIDAD • DISEÑO</div>
+          <div className="flex items-center">
+            DISEÑADO POR <a href="https://tu-sitioweb.com" target="_blank" rel="noreferrer" className="text-white/50 mx-1 hover:text-[#C5A059] transition-colors decoration-dotted underline underline-offset-4">
+              TU SITIOWEB
+            </a>
+          </div>
         </div>
       </div>
     </div>
