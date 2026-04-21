@@ -33,6 +33,9 @@ const ProductCard: React.FC<{
       whileHover={{ y: -6 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className="group relative overflow-hidden rounded-[28px] bg-white border border-[#1A1A1A]/6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)] transition-all duration-500"
+      /* SEO: Microdatos de Producto */
+      itemScope
+      itemType="https://schema.org/Product"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#F8F7F3] pointer-events-none" />
 
@@ -42,7 +45,8 @@ const ProductCard: React.FC<{
 
           <img
             src={product.image}
-            alt={product.name}
+            alt={`Medias de algodón orgánico ${product.name} - Calidad 200 hilos`}
+            itemProp="image"
             referrerPolicy="no-referrer"
             onClick={() => onPreview(product.image)}
             className="w-full h-full object-cover cursor-pointer transition-transform duration-700 group-hover:scale-[1.08]"
@@ -50,7 +54,7 @@ const ProductCard: React.FC<{
 
           <div className="absolute top-4 left-4 z-10">
             <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-bold text-[#4A5D4E] shadow-lg">
-              Destacado
+              Colección Premium
             </span>
           </div>
 
@@ -58,7 +62,7 @@ const ProductCard: React.FC<{
             <button
               onClick={() => onPreview(product.image)}
               className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1A1A1A] shadow-lg hover:bg-[#4A5D4E] hover:text-white transition-colors"
-              title="Vista previa"
+              title="Vista previa detallada"
             >
               <FontAwesomeIcon icon={faExpand} className="text-sm" />
             </button>
@@ -88,19 +92,38 @@ const ProductCard: React.FC<{
         <div className="relative px-2 pt-5 pb-2">
           <div className="flex items-start justify-between gap-4 mb-3">
             <div className="min-w-0">
-              <h3 className="text-[1.45rem] leading-tight font-serif text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors">
+              {/* SEO: Nombre del producto con Microdato */}
+              <h3
+                itemProp="name"
+                className="text-[1.45rem] leading-tight font-serif text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors"
+              >
                 {product.name}
               </h3>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.24em] font-bold text-[#1A1A1A]/38">
-                {product.description.split(',')[0]}
+              <p
+                itemProp="description"
+                className="mt-1 text-[10px] uppercase tracking-[0.24em] font-bold text-[#1A1A1A]/38"
+              >
+                Medias de algodón orgánico 200 hilos
               </p>
             </div>
 
-            <div className="shrink-0 text-right">
+            {/* SEO: Oferta y Precio con Schema */}
+            <div
+              className="shrink-0 text-right"
+              itemProp="offers"
+              itemScope
+              itemType="https://schema.org/Offer"
+            >
               <p className="text-[11px] uppercase tracking-[0.18em] text-[#1A1A1A]/35 font-bold mb-1">
                 Precio
               </p>
-              <span className="inline-block rounded-full bg-[#EEF3EE] px-4 py-2 text-lg font-bold text-[#4A5D4E] shadow-sm">
+              <meta itemProp="priceCurrency" content="PEN" />
+              <meta itemProp="availability" content="https://schema.org/InStock" />
+              <span
+                itemProp="price"
+                content={product.price.toString()}
+                className="inline-block rounded-full bg-[#EEF3EE] px-4 py-2 text-lg font-bold text-[#4A5D4E] shadow-sm"
+              >
                 S/ {product.price.toFixed(2)}
               </span>
             </div>
@@ -110,7 +133,7 @@ const ProductCard: React.FC<{
             <div className="mt-4">
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-[#1A1A1A]/45">
-                  Talla
+                  Tallas Disponibles
                 </span>
                 <div className="h-px flex-1 bg-[#1A1A1A]/8" />
               </div>
@@ -120,11 +143,10 @@ const ProductCard: React.FC<{
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`min-w-[62px] h-11 px-4 rounded-xl text-sm font-bold border transition-all ${
-                      selectedSize === size
+                    className={`min-w-[62px] h-11 px-4 rounded-xl text-sm font-bold border transition-all ${selectedSize === size
                         ? 'bg-[#4A5D4E] text-white border-[#4A5D4E] shadow-[0_10px_20px_rgba(74,93,78,0.18)]'
                         : 'bg-white text-[#1A1A1A]/70 border-[#1A1A1A]/10 hover:border-[#4A5D4E]/40 hover:text-[#4A5D4E] hover:bg-[#F8FAF8]'
-                    }`}
+                      }`}
                   >
                     {size}
                   </button>
@@ -146,22 +168,41 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
   }, []);
 
   return (
-    <section className="pt-32 pb-24 px-6 min-h-screen bg-[#F9F7F2]">
+    <section className="pt-32 pb-24 px-6 min-h-screen bg-[#F9F7F2]" aria-labelledby="catalog-main-title">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <Link to="/" className="inline-flex items-center text-xs uppercase tracking-widest text-[#1A1A1A]/40 font-bold mb-4 hover:text-[#1A1A1A] transition-colors">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-16 gap-12">
+          {/* Bloque Izquierdo: Título y Descripción Principal */}
+          <div className="flex-1 max-w-4xl">
+            <Link to="/" className="inline-flex items-center text-xs uppercase tracking-widest text-[#1A1A1A]/40 font-bold mb-6 hover:text-[#1A1A1A] transition-colors">
               <FontAwesomeIcon icon={faArrowLeft} className="w-3 h-3 mr-2" /> Volver al Inicio
             </Link>
-            <h2 className="text-5xl md:text-6xl font-serif text-[#1A1A1A] tracking-tight">Catálogo <span className="text-[#4A5D4E]">Premium</span></h2>
-          </div>
-          <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-[#1A1A1A]/5 max-w-xs">
-            <p className="text-[#1A1A1A]/90 text-sm leading-relaxed italic">
-              "La elegancia comienza en los pies. Algodón orgánico de 200 hilos para una suavidad sin precedentes."
+
+            <h1 id="catalog-main-title" className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#1A1A1A] tracking-tight leading-[1.1]">
+              Catálogo de <br className="hidden md:block" />
+              <span className="text-[#4A5D4E]">Medias de Algodón Orgánico</span>
+            </h1>
+
+            <p className="mt-8 text-[#1A1A1A]/70 text-lg md:text-xl font-light leading-relaxed">
+              Explora nuestra exclusiva colección de <strong>medias de algodón orgánico de 200 hilos</strong>.
+              Diseñadas para quienes buscan la máxima sofisticación, nuestras prendas ofrecen una
+              textura hipoalergénica y un acabado sin costuras que redefine el concepto de confort premium.
             </p>
+          </div>
+
+          {/* Bloque Derecho: Frase Destacada (Quote) */}
+          <div className="lg:max-w-[280px] mt-4 lg:mt-32">
+            <div className="relative p-8 rounded-3xl border border-[#1A1A1A]/5 bg-white/40 backdrop-blur-sm shadow-sm">
+              {/* Comilla decorativa para SEO visual */}
+              <span className="absolute -top-4 -left-2 text-6xl text-[#4A5D4E]/10 font-serif leading-none">“</span>
+
+              <p className="text-[#1A1A1A]/80 text-sm md:text-base leading-relaxed italic relative z-10">
+                Descubre la suavidad sin precedentes de nuestras <strong>medias de algodón orgánico elaboradas con 200 hilos</strong>. Diseño y confort premium.
+              </p>
+            </div>
           </div>
         </div>
 
+        {/* SEO: Lista de productos organizada */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {productsData.map((product) => (
             <ProductCard
@@ -174,7 +215,6 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
         </div>
       </div>
 
-      {/* Image Preview Modal */}
       <AnimatePresence>
         {previewImage && (
           <motion.div
@@ -184,9 +224,9 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#1A1A1A]/95 backdrop-blur-md"
             onClick={() => setPreviewImage(null)}
           >
-            {/* Close Button - Fixed to top right of screen for easy access */}
             <button
               onClick={() => setPreviewImage(null)}
+              aria-label="Cerrar vista previa"
               className="fixed top-6 right-6 w-10 h-10 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all z-[110] border border-white/20"
             >
               <FontAwesomeIcon icon={faXmark} className="text-lg md:text-xl" />
@@ -202,7 +242,7 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
               <img
                 src={previewImage}
                 className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl"
-                alt="Vista previa"
+                alt="Detalle de medias premium"
                 referrerPolicy="no-referrer"
               />
             </motion.div>

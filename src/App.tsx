@@ -1,6 +1,6 @@
-
 import { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // Components
 import Navbar from './components/Navbar';
@@ -18,20 +18,78 @@ import CatalogPage from './components/CatalogPage';
 import CartSidebar from './components/CartSidebar';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 
+// Types
 interface Product {
     id: number;
     name: string;
     price: number;
     description: string;
     image: string;
+    sizes?: string[];
 }
 
 interface CartItem extends Product {
     quantity: number;
+    selectedSize?: string;
 }
 
-// --- Pages ---
+// --- SEO & Meta Tags Manager ---
+const SEOHandler = () => {
+    const location = useLocation();
 
+    const seoConfig = {
+        "/": {
+            title: "BD SOCKS | Medias de Algodón Orgánico de 200 Hilos",
+            description: "Descubre las medias de algodón orgánico elaboradas con 200 hilos. Máximo confort, diseño premium y materiales hipoalergénicos.",
+            keywords: "medias de algodón orgánico, bd socks, medias 200 hilos, calcetines premium, medias sin costuras"
+        },
+        "/catalogo": {
+            title: "Catálogo de Medias de Algodón Orgánico | BD SOCKS",
+            description: "Explora nuestra colección exclusiva de medias premium de 200 hilos. La suavidad del algodón orgánico en diseños únicos.",
+            keywords: "catálogo medias orgánicas, medias de lujo, calcetines 200 hilos, comprar medias premium"
+        }
+    };
+
+    const currentSeo = seoConfig[location.pathname as keyof typeof seoConfig] || seoConfig["/"];
+
+    return (
+        <Helmet>
+            <title>{currentSeo.title}</title>
+            <meta name="description" content={currentSeo.description} />
+            <meta name="keywords" content={currentSeo.keywords} />
+            <link rel="canonical" href={`https://bdsocks-store.com${location.pathname}`} />
+
+            {/* Open Graph Dinámico */}
+            <meta property="og:title" content={currentSeo.title} />
+            <meta property="og:description" content={currentSeo.description} />
+            <meta property="og:url" content={`https://bdsocks-store.com${location.pathname}`} />
+        </Helmet>
+    );
+};
+
+// --- Datos Estructurados (JSON-LD) para Google ---
+const SchemaMarkup = () => (
+    <script type="application/ld+json">
+        {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ClothingStore",
+            "name": "BD SOCKS",
+            "url": "https://bdsocks-store.com",
+            "logo": "https://bdsocks-store.com/bd_socks.jpg",
+            "description": "Tienda especializada en medias de algodón orgánico de 200 hilos.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lima",
+                "addressCountry": "PE"
+            },
+            "sameAs": [
+                "https://www.instagram.com/bdsocks.latam/"
+            ]
+        })}
+    </script>
+);
+
+// --- Home Page Component ---
 const HomePage = () => {
     const location = useLocation();
 
@@ -62,9 +120,9 @@ const HomePage = () => {
     );
 };
 
-// --- Main App ---
-
+// --- Main App Component ---
 export default function App() {
+    // 1. Estado del Carrito con LocalStorage
     const [cart, setCart] = useState<CartItem[]>(() => {
         const savedCart = localStorage.getItem('bd_socks_cart');
         return savedCart ? JSON.parse(savedCart) : [];
@@ -75,15 +133,18 @@ export default function App() {
         localStorage.setItem('bd_socks_cart', JSON.stringify(cart));
     }, [cart]);
 
-    const addToCart = (product: Product) => {
+    // 2. Lógica del Carrito
+    const addToCart = (product: Product, size?: string) => {
         setCart(prev => {
-            const existing = prev.find(item => item.id === product.id);
+            const existing = prev.find(item => item.id === product.id && item.selectedSize === size);
             if (existing) {
                 return prev.map(item =>
-                    item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+                    (item.id === product.id && item.selectedSize === size)
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
                 );
             }
-            return [...prev, { ...product, quantity: 1 }];
+            return [...prev, { ...product, quantity: 1, selectedSize: size }];
         });
         setIsCartOpen(true);
     };
@@ -110,45 +171,61 @@ export default function App() {
         cart.reduce((sum, item) => sum + item.quantity, 0),
         [cart]);
 
+    // 3. Checkout vía WhatsApp
     const handleCheckout = () => {
         const phoneNumber = "51967395991";
         let message = "¡Hola BD SOCKS! Me gustaría realizar el siguiente pedido:\n\n";
+
         cart.forEach(item => {
-            message += `• ${item.name} x${item.quantity} - S/ ${(item.price * item.quantity).toFixed(2)}\n`;
+            const sizeInfo = item.selectedSize ? ` [Talla: ${item.selectedSize}]` : "";
+            message += `• ${item.name}${sizeInfo} x${item.quantity} - S/ ${(item.price * item.quantity).toFixed(2)}\n`;
         });
-        message += `\n*Total: S/ ${cartTotal.toFixed(2)}*`;
+
+        message += `\n*Total a pagar: S/ ${cartTotal.toFixed(2)}*`;
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-        setCart([]);
-        setIsCartOpen(false);
+
+        // Opcional: Limpiar carrito tras pedido
+        // setCart([]);
+        // setIsCartOpen(false);
     };
 
     return (
-        <Router>
-            <div className="min-h-screen bg-[#F9F7F2] text-[#1A1A1A] selection:bg-[#4A5D4E] selection:text-white flex flex-col">
-                <Navbar cartCount={cartCount} setIsCartOpen={setIsCartOpen} />
+        <HelmetProvider>
+            <Router>
+                <div className="min-h-screen bg-[#F9F7F2] text-[#1A1A1A] selection:bg-[#4A5D4E] selection:text-white flex flex-col">
 
-                <main className="flex-1">
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/catalogo" element={<CatalogPage addToCart={addToCart} />} />
-                    </Routes>
-                </main>
+                    {/* SEO Dinámico e Inyección de Schema */}
+                    <SEOHandler />
+                    <SchemaMarkup />
 
-                <Footer />
+                    <Navbar cartCount={cartCount} setIsCartOpen={setIsCartOpen} />
 
-                <CartSidebar
-                    isOpen={isCartOpen}
-                    onClose={() => setIsCartOpen(false)}
-                    cart={cart}
-                    removeFromCart={removeFromCart}
-                    updateQuantity={updateQuantity}
-                    cartTotal={cartTotal}
-                    onCheckout={handleCheckout}
-                />
+                    <main className="flex-1" role="main">
+                        <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route
+                                path="/catalogo"
+                                element={<CatalogPage addToCart={addToCart} />}
+                            />
+                        </Routes>
+                    </main>
 
-                <WhatsAppFloatingButton />
-            </div>
-        </Router>
+                    <Footer />
+
+                    <CartSidebar
+                        isOpen={isCartOpen}
+                        onClose={() => setIsCartOpen(false)}
+                        cart={cart}
+                        removeFromCart={removeFromCart}
+                        updateQuantity={updateQuantity}
+                        cartTotal={cartTotal}
+                        onCheckout={handleCheckout}
+                    />
+
+                    <WhatsAppFloatingButton />
+                </div>
+            </Router>
+        </HelmetProvider>
     );
 }
