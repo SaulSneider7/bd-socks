@@ -16,9 +16,7 @@ const FeaturedProducts = () => {
 
             {/* BLOQUE SEO INTEGRADO */}
             <p className="mt-8 text-[#1A1A1A]/70 leading-relaxed max-w-lg text-[15px]">
-              Nuestras <strong>medias orgánicas con 200 hilos</strong> definen un nuevo estándar de confort.
-              Diseñadas con fibras naturales de alta calidad, estas <strong>medias premium</strong> ofrecen
-              una transpirabilidad superior y un ajuste anatómico que eleva el estilo diario con elegancia y durabilidad.
+              Nuestras <strong>medias orgánicas de 200 hilos</strong> establecen un nuevo estándar de confort y responsabilidad. Confeccionadas con <strong>algodón orgánico</strong>, ofrecen una transpirabilidad superior y una suavidad natural que eleva el uso diario. Su producción sostenible reduce el impacto ambiental sin comprometer la durabilidad ni la elegancia de un producto premium.
             </p>
           </div>
 

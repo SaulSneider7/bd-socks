@@ -26,7 +26,7 @@ const QualityPillars = () => {
             {/* SEO: H3 con palabra clave específica */}
             <h3 className="text-2xl font-serif">Tejido de 200 Hilos</h3>
             <p className="text-white/50 text-sm leading-relaxed">
-              Elevamos el estándar de las <strong>medias premium </strong>. Mientras otros usan 120 hilos, nuestra fabricación asegura una densidad superior para una suavidad inigualable al tacto.
+              Nuestras <strong>medias de algodón orgánico</strong> están elaboradas con 200 hilos, lo que proporciona una textura más fina, suave y resistente. Su tejido de alta densidad mejora la durabilidad y el confort, ofreciendo una experiencia superior en cada uso.
             </p>
           </motion.div>
 
@@ -40,9 +40,9 @@ const QualityPillars = () => {
           >
             <div className="text-6xl font-serif italic text-[#4A5D4E]" aria-hidden="true">02</div>
             {/* SEO: Frase clave exacta inyectada en el título */}
-            <h3 className="text-2xl font-serif">Algodón Orgánico Certificado</h3>
+            <h3 className="text-2xl font-serif">Algodón Orgánico</h3>
             <p className="text-white/50 text-sm leading-relaxed">
-              <strong>Las medias orgánicas con 200 hilos</strong> son nuestra especialidad. Utilizamos fibras naturales que garantizan alta transpirabilidad y propiedades hipoalergénicas para el cuidado de tu piel.
+              El <strong>algodón orgánico</strong> ofrece suavidad natural, mayor frescura y cero químicos agresivos. Es ideal para pieles sensibles y reduce el impacto ambiental desde su cultivo hasta el producto final. Además, su fibra pura mejora la transpirabilidad, la durabilidad y la comodidad diaria. Un material responsable que cuida tus pies y también al planeta.
             </p>
           </motion.div>
 
@@ -55,9 +55,9 @@ const QualityPillars = () => {
             className="space-y-6 text-center"
           >
             <div className="text-6xl font-serif italic text-[#4A5D4E]" aria-hidden="true">03</div>
-            <h3 className="text-2xl font-serif">Ajuste Premium Anatómico</h3>
+            <h3 className="text-2xl font-serif">Ajuste Anatómico</h3>
             <p className="text-white/50 text-sm leading-relaxed">
-              Diseñadas para el día a día, nuestras <strong>medias de algodón orgánico</strong> no tienen costuras molestas. Un diseño que se mantiene en su lugar con elegancia y confort absoluto.
+              Diseñadas para el dia a dia y un acabado sin costuras, que potencian la suavidad del algodón orgánico, brindando una experiencia cómoda, responsable y libre de molestias.
             </p>
           </motion.div>
         </div>

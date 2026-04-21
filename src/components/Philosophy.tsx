@@ -32,7 +32,7 @@ const Philosophy = () => {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <span className="text-xs uppercase tracking-[0.4em] text-[#C5A059] font-bold mb-4 block">El Estándar de los 200 Hilos</span>
+            <span className="text-xs uppercase tracking-[0.4em] text-[#C5A059] font-bold mb-4 block">Marca Peruana</span>
             <h2 className="text-5xl font-serif mb-8 leading-tight text-[#1A1A1A]">Alma Peruana, <br /><span className="italic text-[#4A5D4E]">Diseño Europeo.</span></h2>
             <div className="space-y-6 text-[#1A1A1A]/70 leading-relaxed">
               <p>

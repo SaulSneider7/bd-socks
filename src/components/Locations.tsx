@@ -132,9 +132,9 @@ const Locations = () => {
             </div>
           </motion.div>
           <div className="space-y-8">
-            <h3 className="text-4xl font-serif text-[#1A1A1A]">Nuestra Tienda <span className="italic text-[#4A5D4E]">BD SOCKS</span></h3>
+            <h3 className="text-4xl font-serif text-[#1A1A1A]">Nuestra Tienda</h3>
             <p className="text-[#1A1A1A]/70 leading-relaxed">
-              Un espacio diseñado para reflejar la sofisticación y calidad de nuestros productos. Ven a conocer toda nuestra colección y siente la suavidad del algodón de 200 hilos en persona.
+              Un espacio creado para transmitir la calidad y el cuidado detrás de cada una de nuestras medias. Te invitamos a descubrir la colección completa y sentir en persona la suavidad y precisión del algodón de 200 hilos.
             </p>
             <div className="flex items-center space-x-4 text-[#C5A059]">
               <div className="w-12 h-12 rounded-full bg-[#4A5D4E]/10 flex items-center justify-center">

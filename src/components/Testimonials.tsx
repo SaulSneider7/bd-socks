@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     name: "Carlos R.",
-    text: "Nunca pensé que unas medias premium pudieran hacer tanta diferencia. La suavidad es increíble y después de varios lavados siguen como nuevos.",
+    text: "Me encantaron . La suavidad es increible y despues de varias lavadas siguen como nuevos.",
     role: "Cliente Verificado",
     city: "Lima"
   },
@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     name: "Ricardo G.",
-    text: "Buscaba medias premium para usar con mis ternos y estas superaron mis expectativas. No se bajan y el ajuste es perfecto.",
+    text: "Buscaba medias de buena calidad para el día a día y estas superaron mis expectativas. No se bajan y el ajuste es perfecto.",
     role: "Ejecutivo",
     city: "San Isidro"
   },
@@ -28,7 +28,7 @@ const testimonials = [
   },
   {
     name: "Mateo S.",
-    text: "Ideales para regalo. El empaque y la calidad de las medias premium BD SOCKS demuestran que cuidan cada detalle.",
+    text: "Ideales para regalo. El empaque y la calidad de las medias demuestran que cuidan cada detalle.",
     role: "Cliente Verificado",
     city: "La Molina"
   }
