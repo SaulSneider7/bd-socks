@@ -53,7 +53,7 @@ const Footer = () => (
 
       <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] font-bold text-white/30 text-center md:text-left">
         <div className="space-y-1">
-          <div>© {new Date().getFullYear()} BD SOCKS PERÚ. TODOS LOS DERECHOS RESERVADOS.</div>
+          <div>© {new Date().getFullYear()} BD SOCKS TODOS LOS DERECHOS RESERVADOS.</div>
           <div >BD DRY CLEAN EIRL | RUC: 20612173584</div>
         </div>
         <div className="flex flex-col items-center md:items-end gap-1">

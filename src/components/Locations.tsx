@@ -127,9 +127,6 @@ const Locations = () => {
               className="w-full h-full object-cover  transition-all duration-1000"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-              <p className="text-white font-serif italic text-xl">Visita nuestra tienda física y vive la experiencia premium.</p>
-            </div>
           </motion.div>
           <div className="space-y-8">
             <h3 className="text-4xl font-serif text-[#1A1A1A]">Nuestra Tienda</h3>
