@@ -13,7 +13,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="text-xs uppercase tracking-[0.4em] text-black/40 font-bold mb-4 block">Premium Peruvian Quality</span>
+          <span className="text-xs uppercase tracking-[0.4em] text-black/40 font-bold mb-4 block">Premium Quality</span>
           <h1 className="text-6xl md:text-8xl font-serif leading-[0.9] mb-8">
             Sofisticación <br />
             <span className="italic">en cada paso.</span>
