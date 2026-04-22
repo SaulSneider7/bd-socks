@@ -39,14 +39,16 @@ const SEOHandler = () => {
 
     const seoConfig = {
         "/": {
-            title: "BD SOCKS | Medias de Algodón Orgánico de 200 Hilos",
-            description: "Descubre las medias de algodón orgánico elaboradas con 200 hilos. Máximo confort, diseño premium y materiales hipoalergénicos.",
-            keywords: "medias de algodón orgánico, bd socks, medias 200 hilos, calcetines premium, medias sin costuras"
+            // Ajustado a tu petición exacta
+            title: "Medias Premium | BD SOCKS",
+            description: "Descubre las medias de algodón orgánico elaboradas con 200 hilos. Calidad premium, diseño sin costuras e hipoalergénicos para una suavidad superior.",
+            keywords: "medias de algodón orgánico, medias premium, bd socks, medias 200 hilos, calcetines de lujo"
         },
         "/catalogo": {
-            title: "Catálogo de Medias de Algodón Orgánico | BD SOCKS",
-            description: "Explora nuestra colección exclusiva de medias premium de 200 hilos. La suavidad del algodón orgánico en diseños únicos.",
-            keywords: "catálogo medias orgánicas, medias de lujo, calcetines 200 hilos, comprar medias premium"
+            // Consistencia en el catálogo
+            title: "Catálogo de Medias Premium | BD SOCKS",
+            description: "Explora nuestra colección exclusiva. Descubre las medias de algodón orgánico elaboradas con 200 hilos para un confort inigualable.",
+            keywords: "catálogo medias orgánicas, comprar medias premium, medias 200 hilos"
         }
     };
 
@@ -59,10 +61,11 @@ const SEOHandler = () => {
             <meta name="keywords" content={currentSeo.keywords} />
             <link rel="canonical" href={`https://bdsocks-store.com${location.pathname}`} />
 
-            {/* Open Graph Dinámico */}
+            {/* Open Graph Dinámico para que en redes sociales también se vea igual */}
             <meta property="og:title" content={currentSeo.title} />
             <meta property="og:description" content={currentSeo.description} />
             <meta property="og:url" content={`https://bdsocks-store.com${location.pathname}`} />
+            <meta property="og:image" content="https://bdsocks-store.com/bd_socks.jpg" />
         </Helmet>
     );
 };
@@ -76,15 +79,13 @@ const SchemaMarkup = () => (
             "name": "BD SOCKS",
             "url": "https://bdsocks-store.com",
             "logo": "https://bdsocks-store.com/bd_socks.jpg",
-            "description": "Tienda especializada en medias de algodón orgánico de 200 hilos.",
+            // Descripción coherente con tu pedido
+            "description": "Descubre las medias de algodón orgánico elaboradas con 200 hilos de alta gama.",
             "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Lima",
                 "addressCountry": "PE"
-            },
-            "sameAs": [
-                "https://www.instagram.com/bdsocks.latam/"
-            ]
+            }
         })}
     </script>
 );
