@@ -40,13 +40,13 @@ const SEOHandler = () => {
     const seoConfig = {
         "/": {
             // Ajustado a tu petición exacta
-            title: "Medias Premium | BD SOCKS",
+            title: "MEDIAS DE ALGODÓN ORGÁNICO | BD SOCKS",
             description: "Descubre las medias de algodón orgánico elaboradas con 200 hilos. Calidad premium, diseño sin costuras e hipoalergénicos para una suavidad superior.",
             keywords: "medias de algodón orgánico, medias premium, bd socks, medias 200 hilos, calcetines de lujo"
         },
         "/catalogo": {
             // Consistencia en el catálogo
-            title: "Catálogo de Medias Premium | BD SOCKS",
+            title: "Catálogo de Medias | BD SOCKS",
             description: "Explora nuestra colección exclusiva. Descubre las medias de algodón orgánico elaboradas con 200 hilos para un confort inigualable.",
             keywords: "catálogo medias orgánicas, comprar medias premium, medias 200 hilos"
         }
