@@ -35,36 +35,32 @@ const FeaturedProducts = () => {
               itemScope
               itemType="https://schema.org/Product"
             >
+              {/* 1. AGREGAR MARCA (Evita avisos de Google) */}
+              <meta itemProp="brand" content="BD SOCKS" />
+              {/* 2. AGREGAR CONDICIÓN (Obligatorio para algunos tipos de búsqueda) */}
+              <div itemProp="offers" itemScope itemType="https://schema.org/Offer" className="hidden">
+                <meta itemProp="itemCondition" content="https://schema.org/NewCondition" />
+              </div>
+
               <div className="rounded-[2rem] p-[1px] bg-gradient-to-b from-[#f8f6f1] via-[#e8e1d4] to-[#d8d0c2] shadow-[0_12px_35px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_18px_50px_rgba(0,0,0,0.10)]">
                 <div className="h-full rounded-[2rem] overflow-hidden bg-[#F7F3EB] flex flex-col">
 
-                  {/* Contenedor de Imagen con metadatos */}
+                  {/* Contenedor de Imagen */}
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img
                       src={product.image}
                       alt={`Medias premium ${product.name} de algodón orgánico`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      referrerPolicy="no-referrer"
                       itemProp="image"
                     />
-
                     <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/10" />
-
-                    <div className="absolute top-5 left-5">
-                      <div className="bg-white/75 backdrop-blur-xl border border-white/60 px-4 py-2 rounded-full flex items-center gap-2 shadow-md">
-                        <FontAwesomeIcon icon={faStar} className="text-[#4A5D4E] text-[10px]" />
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#1A1A1A]">
-                          Calidad 200 Hilos
-                        </span>
-                      </div>
-                    </div>
                   </div>
 
                   <div className="flex flex-col justify-between flex-1 px-6 py-6 bg-[#F7F3EB] border-t border-[#E7E0D2]">
                     <div>
-                      {/* SEO: Categoría del producto */}
                       <p className="text-[11px] uppercase tracking-[0.25em] text-[#1A1A1A]/40 font-semibold mb-3">
-                        <span itemProp="category">Medias de Algodón Orgánico</span>
+                        {/* CORRECCIÓN: Google a veces no reconoce itemProp="category" en Product, usamos un texto plano */}
+                        <span>Medias de Algodón Orgánico</span>
                       </p>
 
                       <h3
@@ -82,7 +78,7 @@ const FeaturedProducts = () => {
                       </p>
                     </div>
 
-                    {/* SEO: Precios con Microdatos (Schema.org) */}
+                    {/* SEO: Oferta y Precio */}
                     <div
                       className="mt-6 pt-5 border-t border-[#E7E0D2] flex items-end justify-between"
                       itemProp="offers"
@@ -94,19 +90,16 @@ const FeaturedProducts = () => {
                           Diseño Exclusivo
                         </p>
                         <link itemProp="availability" href="https://schema.org/InStock" />
-                        <span className="text-sm text-[#1A1A1A]/50">
-                          Stock limitado
-                        </span>
+                        <span className="text-sm text-[#1A1A1A]/50">Stock limitado</span>
                       </div>
 
                       <div className="text-right">
+                        {/* IMPORTANTE: El meta de moneda debe estar dentro del div con itemProp="offers" */}
                         <meta itemProp="priceCurrency" content="PEN" />
                         <p
-                          itemProp="price"
-                          content={product.price.toString()}
                           className="text-[#4A5D4E] font-semibold text-[1.7rem] tracking-tight"
                         >
-                          S/ {product.price.toFixed(2)}
+                          S/ <span itemProp="price" content={product.price.toString()}>{product.price.toFixed(2)}</span>
                         </p>
                       </div>
                     </div>
