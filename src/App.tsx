@@ -1,7 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -32,63 +30,6 @@ interface CartItem extends Product {
     quantity: number;
     selectedSize?: string;
 }
-
-// --- SEO & Meta Tags Manager ---
-const SEOHandler = () => {
-    const location = useLocation();
-
-    const seoConfig = {
-        "/": {
-            // Ajustado a tu petición exacta
-            title: "MEDIAS DE ALGODÓN ORGÁNICO | BD SOCKS",
-            description: "Descubre las medias de algodón orgánico elaboradas con 200 hilos. Calidad premium, diseño sin costuras e hipoalergénicos para una suavidad superior.",
-            keywords: "medias de algodón orgánico, medias premium, bd socks, medias 200 hilos, calcetines de lujo"
-        },
-        "/catalogo": {
-            // Consistencia en el catálogo
-            title: "Catálogo de Medias | BD SOCKS",
-            description: "Explora nuestra colección exclusiva. Descubre las medias de algodón orgánico elaboradas con 200 hilos para un confort inigualable.",
-            keywords: "catálogo medias orgánicas, comprar medias premium, medias 200 hilos"
-        }
-    };
-
-    const currentSeo = seoConfig[location.pathname as keyof typeof seoConfig] || seoConfig["/"];
-
-    return (
-        <Helmet>
-            <title>{currentSeo.title}</title>
-            <meta name="description" content={currentSeo.description} />
-            <meta name="keywords" content={currentSeo.keywords} />
-            <link rel="canonical" href={`https://bdsocks-store.com${location.pathname}`} />
-
-            {/* Open Graph Dinámico para que en redes sociales también se vea igual */}
-            <meta property="og:title" content={currentSeo.title} />
-            <meta property="og:description" content={currentSeo.description} />
-            <meta property="og:url" content={`https://bdsocks-store.com${location.pathname}`} />
-            <meta property="og:image" content="https://bdsocks-store.com/bd_socks.jpg" />
-        </Helmet>
-    );
-};
-
-// --- Datos Estructurados (JSON-LD) para Google ---
-const SchemaMarkup = () => (
-    <script type="application/ld+json">
-        {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ClothingStore",
-            "name": "BD SOCKS",
-            "url": "https://bdsocks-store.com",
-            "logo": "https://bdsocks-store.com/bd_socks.jpg",
-            // Descripción coherente con tu pedido
-            "description": "Descubre las medias de algodón orgánico elaboradas con 200 hilos de alta gama.",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Lima",
-                "addressCountry": "PE"
-            }
-        })}
-    </script>
-);
 
 // --- Home Page Component ---
 const HomePage = () => {
@@ -192,41 +133,37 @@ export default function App() {
     };
 
     return (
-        <HelmetProvider>
-            <Router>
-                <div className="min-h-screen bg-[#F9F7F2] text-[#1A1A1A] selection:bg-[#4A5D4E] selection:text-white flex flex-col">
 
-                    {/* SEO Dinámico e Inyección de Schema */}
-                    <SEOHandler />
-                    <SchemaMarkup />
+        <Router>
+            <div className="min-h-screen bg-[#F9F7F2] text-[#1A1A1A] selection:bg-[#4A5D4E] selection:text-white flex flex-col">
 
-                    <Navbar cartCount={cartCount} setIsCartOpen={setIsCartOpen} />
+                <Navbar cartCount={cartCount} setIsCartOpen={setIsCartOpen} />
 
-                    <main className="flex-1" role="main">
-                        <Routes>
-                            <Route path="/" element={<HomePage />} />
-                            <Route
-                                path="/catalogo"
-                                element={<CatalogPage addToCart={addToCart} />}
-                            />
-                        </Routes>
-                    </main>
+                <main className="flex-1" role="main">
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route
+                            path="/catalogo"
+                            element={<CatalogPage addToCart={addToCart} />}
+                        />
+                    </Routes>
+                </main>
 
-                    <Footer />
+                <Footer />
 
-                    <CartSidebar
-                        isOpen={isCartOpen}
-                        onClose={() => setIsCartOpen(false)}
-                        cart={cart}
-                        removeFromCart={removeFromCart}
-                        updateQuantity={updateQuantity}
-                        cartTotal={cartTotal}
-                        onCheckout={handleCheckout}
-                    />
+                <CartSidebar
+                    isOpen={isCartOpen}
+                    onClose={() => setIsCartOpen(false)}
+                    cart={cart}
+                    removeFromCart={removeFromCart}
+                    updateQuantity={updateQuantity}
+                    cartTotal={cartTotal}
+                    onCheckout={handleCheckout}
+                />
 
-                    <WhatsAppFloatingButton />
-                </div>
-            </Router>
-        </HelmetProvider>
+                <WhatsAppFloatingButton />
+            </div>
+        </Router>
+
     );
 }
