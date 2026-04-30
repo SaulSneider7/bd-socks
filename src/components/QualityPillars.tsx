@@ -10,7 +10,7 @@ const QualityPillars = () => {
           </span>
           {/* SEO: H2 con la palabra clave principal integrada */}
           <h2 id="pillars-title" className="text-5xl font-serif italic">
-            ¿Por qué elegir nuestras <span className="text-[#C5A059]">medias premium</span>?
+            ¿Por qué elegir nuestros <span className="text-[#C5A059]">calcetines</span>?
           </h2>
         </div>
 
@@ -24,9 +24,9 @@ const QualityPillars = () => {
           >
             <div className="text-6xl font-serif italic text-[#4A5D4E]" aria-hidden="true">01</div>
             {/* SEO: H3 con palabra clave específica */}
-            <h3 className="text-2xl font-serif">Tejido de 200 Hilos</h3>
+            <h3 className="text-2xl font-serif">Tejido de 200 ahujas</h3>
             <p className="text-white/50 text-sm leading-relaxed">
-              Nuestras <strong>medias de algodón orgánico</strong> están elaboradas con 200 hilos, lo que proporciona una textura más fina, suave y resistente. Su tejido de alta densidad mejora la durabilidad y el confort, ofreciendo una experiencia superior en cada uso.
+              Nuestras <strong>calcetines de algodón orgánico</strong> están elaboradas con 200 hilos, lo que proporciona una textura más fina, suave y resistente. Su tejido de alta densidad mejora la durabilidad y el confort, ofreciendo una experiencia superior en cada uso.
             </p>
           </motion.div>
 

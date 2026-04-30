@@ -75,7 +75,7 @@ const Contact = () => {
           </h3>
 
           <p className="text-white/60 mb-10 relative z-10 max-w-sm">
-            Descubre por qué somos la elección preferida de quienes buscan calidad, confort y estilo en cada paso.
+            Descubre por qué somos la elección preferida de quienes buscan calidad,  comodidad y estilo, siempre con un enfoque en la sostenibilidad.
           </p>
 
           <Link

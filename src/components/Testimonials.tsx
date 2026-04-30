@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     name: "Ricardo G.",
-    text: "Buscaba medias de buena calidad para el día a día y estas superaron mis expectativas. No se bajan y el ajuste es perfecto.",
+    text: "Buscaba calcetines de buena calidad para el día a día y estas superaron mis expectativas. No se bajan y el ajuste es perfecto.",
     role: "Ejecutivo",
     city: "San Isidro"
   },
@@ -28,7 +28,7 @@ const testimonials = [
   },
   {
     name: "Mateo S.",
-    text: "Ideales para regalo. El empaque y la calidad de las medias demuestran que cuidan cada detalle.",
+    text: "Ideales para regalo. El empaque y la calidad de los calcetines demuestran que cuidan cada detalle.",
     role: "Cliente Verificado",
     city: "La Molina"
   }
@@ -50,7 +50,7 @@ const Testimonials = () => {
             La Experiencia <span className="text-[#C5A059]">BD SOCKS</span>
           </h2>
           <p className="text-white/60 uppercase tracking-[0.2em] text-xs font-bold">
-            Lo que dicen de nuestras medias premium
+            Lo que dicen de nuestros calcetines
           </p>
         </div>
 

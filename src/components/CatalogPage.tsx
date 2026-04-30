@@ -32,14 +32,15 @@ const ProductCard: React.FC<{
       viewport={{ once: true }}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden rounded-[28px] bg-white border border-[#1A1A1A]/6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)] transition-all duration-500"
-      /* SEO: Microdatos de Producto */
+      className="group relative overflow-hidden rounded-[28px] bg-white border border-[#1A1A1A]/[0.06] shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)] transition-all duration-500"
       itemScope
       itemType="https://schema.org/Product"
     >
+      {/* Fondo suave */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#F8F7F3] pointer-events-none" />
 
       <div className="relative p-4">
+        {/* Imagen del producto */}
         <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden bg-[#F3F0E8]">
           <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10 z-[1]" />
 
@@ -52,24 +53,24 @@ const ProductCard: React.FC<{
             className="w-full h-full object-cover cursor-pointer transition-transform duration-700 group-hover:scale-[1.08]"
           />
 
-          <div className="absolute top-4 left-4 z-10">
-            <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-bold text-[#4A5D4E] shadow-lg">
-              Colección Premium
-            </span>
-          </div>
-
+          {/* Botón de vista previa */}
           <div className="absolute top-4 right-4 z-10 flex flex-col gap-2 translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
             <button
+              type="button"
               onClick={() => onPreview(product.image)}
-              className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1A1A1A] shadow-lg hover:bg-[#4A5D4E] hover:text-white transition-colors"
               title="Vista previa detallada"
+              aria-label="Vista previa detallada"
+              className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1A1A1A] shadow-lg hover:bg-[#4A5D4E] hover:text-white transition-colors"
             >
               <FontAwesomeIcon icon={faExpand} className="text-sm" />
             </button>
           </div>
 
+          {/* Botón añadir al carrito */}
           <div className="absolute inset-x-4 bottom-4 z-10">
+            {/* Mobile */}
             <button
+              type="button"
               onClick={() => addToCart(product, selectedSize)}
               className="w-full md:hidden rounded-2xl bg-[#4A5D4E] text-white py-3.5 text-xs uppercase tracking-[0.22em] font-bold shadow-[0_14px_30px_rgba(74,93,78,0.28)] active:scale-[0.98] transition-all"
             >
@@ -77,8 +78,10 @@ const ProductCard: React.FC<{
               Añadir
             </button>
 
+            {/* Desktop */}
             <div className="hidden md:block translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
               <button
+                type="button"
                 onClick={() => addToCart(product, selectedSize)}
                 className="w-full rounded-2xl bg-[#4A5D4E] text-white py-4 text-xs uppercase tracking-[0.24em] font-bold shadow-[0_18px_35px_rgba(74,93,78,0.30)] hover:bg-[#3D4D40] transition-all"
               >
@@ -89,25 +92,24 @@ const ProductCard: React.FC<{
           </div>
         </div>
 
+        {/* Información del producto */}
         <div className="relative px-2 pt-5 pb-2">
           <div className="flex items-start justify-between gap-4 mb-3">
+            {/* Nombre */}
             <div className="min-w-0">
-              {/* SEO: Nombre del producto con Microdato */}
               <h3
                 itemProp="name"
                 className="text-[1.45rem] leading-tight font-serif text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors"
               >
                 {product.name}
               </h3>
-              <p
-                itemProp="description"
-                className="mt-1 text-[10px] uppercase tracking-[0.24em] font-bold text-[#1A1A1A]/38"
-              >
-                Medias de algodón orgánico 200 hilos
-              </p>
+
+              {product.description && (
+                <meta itemProp="description" content={product.description} />
+              )}
             </div>
 
-            {/* SEO: Oferta y Precio con Schema */}
+            {/* Precio */}
             <div
               className="shrink-0 text-right"
               itemProp="offers"
@@ -117,35 +119,37 @@ const ProductCard: React.FC<{
               <p className="text-[11px] uppercase tracking-[0.18em] text-[#1A1A1A]/35 font-bold mb-1">
                 Precio
               </p>
+
               <meta itemProp="priceCurrency" content="PEN" />
+              <meta itemProp="price" content={product.price.toString()} />
               <meta itemProp="availability" content="https://schema.org/InStock" />
-              <span
-                itemProp="price"
-                content={product.price.toString()}
-                className="inline-block rounded-full bg-[#EEF3EE] px-4 py-2 text-lg font-bold text-[#4A5D4E] shadow-sm"
-              >
+
+              <span className="inline-block rounded-full bg-[#EEF3EE] px-4 py-2 text-lg font-bold text-[#4A5D4E] shadow-sm">
                 S/ {product.price.toFixed(2)}
               </span>
             </div>
           </div>
 
-          {product.sizes && (
+          {/* Tallas */}
+          {product.sizes && product.sizes.length > 0 && (
             <div className="mt-4">
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-[#1A1A1A]/45">
                   Tallas Disponibles
                 </span>
-                <div className="h-px flex-1 bg-[#1A1A1A]/8" />
+
+                <div className="h-px flex-1 bg-[#1A1A1A]/[0.08]" />
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {product.sizes.map(size => (
+                {product.sizes.map((size) => (
                   <button
                     key={size}
+                    type="button"
                     onClick={() => setSelectedSize(size)}
                     className={`min-w-[62px] h-11 px-4 rounded-xl text-sm font-bold border transition-all ${selectedSize === size
-                        ? 'bg-[#4A5D4E] text-white border-[#4A5D4E] shadow-[0_10px_20px_rgba(74,93,78,0.18)]'
-                        : 'bg-white text-[#1A1A1A]/70 border-[#1A1A1A]/10 hover:border-[#4A5D4E]/40 hover:text-[#4A5D4E] hover:bg-[#F8FAF8]'
+                      ? 'bg-[#4A5D4E] text-white border-[#4A5D4E] shadow-[0_10px_20px_rgba(74,93,78,0.18)]'
+                      : 'bg-white text-[#1A1A1A]/70 border-[#1A1A1A]/10 hover:border-[#4A5D4E]/40 hover:text-[#4A5D4E] hover:bg-[#F8FAF8]'
                       }`}
                   >
                     {size}
@@ -178,27 +182,13 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
             </Link>
 
             <h1 id="catalog-main-title" className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#1A1A1A] tracking-tight leading-[1.1]">
-              Catálogo de <br className="hidden md:block" />
-              <span className="text-[#4A5D4E]">Medias de Algodón Orgánico</span>
+              Catálogo <br className="hidden md:block" />
+              <span className="text-[#4A5D4E]">Calcetines de algod&oacute;n Org&aacute;nico</span>
             </h1>
 
             <p className="mt-8 text-[#1A1A1A]/70 text-lg md:text-xl font-light leading-relaxed">
-              Explora nuestra exclusiva colección de <strong>medias de algodón orgánico de 200 hilos</strong>.
-              Diseñadas para quienes buscan la máxima sofisticación, nuestras prendas ofrecen una
-              textura hipoalergénica y un acabado sin costuras que redefine el concepto de confort premium.
+              Explora nuestra colección de calcetines, diseñados sin costuras y con propiedades hipoalergénicas para brindarte máxima comodidad, cuidando tu piel y el planeta.
             </p>
-          </div>
-
-          {/* Bloque Derecho: Frase Destacada (Quote) */}
-          <div className="lg:max-w-[280px] mt-4 lg:mt-32">
-            <div className="relative p-8 rounded-3xl border border-[#1A1A1A]/5 bg-white/40 backdrop-blur-sm shadow-sm">
-              {/* Comilla decorativa para SEO visual */}
-              <span className="absolute -top-4 -left-2 text-6xl text-[#4A5D4E]/10 font-serif leading-none">“</span>
-
-              <p className="text-[#1A1A1A]/80 text-sm md:text-base leading-relaxed italic relative z-10">
-                Descubre la suavidad sin precedentes de nuestras <strong>medias de algodón orgánico elaboradas con 200 hilos</strong>. Diseño y confort premium.
-              </p>
-            </div>
           </div>
         </div>
 

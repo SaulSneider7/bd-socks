@@ -128,18 +128,30 @@ const Locations = () => {
               referrerPolicy="no-referrer"
             />
           </motion.div>
-          <div className="space-y-8">
-            <h3 className="text-4xl font-serif text-[#1A1A1A]">Nuestra Tienda</h3>
-            <p className="text-[#1A1A1A]/70 leading-relaxed">
-              Un espacio creado para transmitir la calidad y el cuidado detrás de cada una de nuestras medias. Te invitamos a descubrir la colección completa y sentir en persona la suavidad y precisión del algodón de 200 hilos.
-            </p>
-            <div className="flex items-center space-x-4 text-[#C5A059]">
-              <div className="w-12 h-12 rounded-full bg-[#4A5D4E]/10 flex items-center justify-center">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="w-6 h-6" />
+          <div className="space-y-8 rounded-[32px] bg-white border border-[#1A1A1A]/[0.06] p-8 md:p-10 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] font-bold text-[#C5A059] mb-3">
+                Visítanos
+              </p>
+
+              <h3 className="text-4xl md:text-5xl font-serif text-[#1A1A1A] leading-tight">
+                Nuestra Tienda
+              </h3>
+            </div>
+
+            <div className="flex items-center gap-5 rounded-[24px] bg-[#F8F7F3] border border-[#1A1A1A]/[0.05] p-5 md:p-6">
+              <div className="w-16 h-16 rounded-full bg-[#4A5D4E]/10 flex items-center justify-center text-[#C5A059] shrink-0">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="w-7 h-7" />
               </div>
+
               <div>
-                <p className="text-xs uppercase tracking-widest font-bold text-[#1A1A1A]/40">Ubicación Principal</p>
-                <p className="text-lg font-serif text-[#1A1A1A]">Lima, Perú</p>
+                <p className="text-xs uppercase tracking-[0.22em] font-bold text-[#1A1A1A]/40 mb-1">
+                  Ubicación Principal
+                </p>
+
+                <p className="text-2xl md:text-3xl font-serif text-[#1A1A1A]">
+                  Lima, Perú
+                </p>
               </div>
             </div>
           </div>

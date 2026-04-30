@@ -11,13 +11,8 @@ const FeaturedProducts = () => {
           <div className="max-w-xl">
             {/* SEO: H2 con keyword principal */}
             <h2 id="featured-title" className="text-5xl md:text-6xl font-serif text-[#1A1A1A] leading-tight">
-              Medias <span className="italic">destacadas</span>
+              Calcetines <span className="italic">BD Socks</span>
             </h2>
-
-            {/* BLOQUE SEO INTEGRADO */}
-            <p className="mt-8 text-[#1A1A1A]/70 leading-relaxed max-w-lg text-[15px]">
-              Nuestras <strong>medias orgánicas de 200 hilos</strong> establecen un nuevo estándar de confort y responsabilidad. Confeccionadas con <strong>algodón orgánico</strong>, ofrecen una transpirabilidad superior y una suavidad natural que eleva el uso diario. Su producción sostenible reduce el impacto ambiental sin comprometer la durabilidad ni la elegancia de un producto premium.
-            </p>
           </div>
 
           <Link to="/catalogo" className="group inline-flex items-center text-sm uppercase tracking-widest font-bold text-[#1A1A1A] hover:text-[#4A5D4E] transition-all">

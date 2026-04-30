@@ -30,11 +30,11 @@ const InstagramFeed = () => {
 
                         {/* SEO: H2 con intención de búsqueda */}
                         <h2 id="social-title" className="text-4xl md:text-5xl font-serif text-[#1A1A1A] mb-4">
-                            Estilo y <span className="italic">Tendencia</span> en Medias
+                            Estilo y <span className="italic">Tendencia</span> en Calcetines
                         </h2>
 
                         <p className="text-[#1A1A1A]/60 max-w-md">
-                            Únete a nuestra comunidad y descubre por qué somos referentes en <strong>medias orgánicas con 200 hilos</strong> y diseño premium.
+                            En BD Socks creemos que los pequeños detalles hacen la diferencia. Únete a nuestra comunidad y siéntelo tú mismo.
                         </p>
                     </div>
 
