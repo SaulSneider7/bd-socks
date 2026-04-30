@@ -30,74 +30,68 @@ const FeaturedProducts = () => {
               itemScope
               itemType="https://schema.org/Product"
             >
-              {/* 1. AGREGAR MARCA (Evita avisos de Google) */}
               <meta itemProp="brand" content="BD SOCKS" />
-              {/* 2. AGREGAR CONDICIÓN (Obligatorio para algunos tipos de búsqueda) */}
-              <div itemProp="offers" itemScope itemType="https://schema.org/Offer" className="hidden">
-                <meta itemProp="itemCondition" content="https://schema.org/NewCondition" />
-              </div>
 
               <div className="rounded-[2rem] p-[1px] bg-gradient-to-b from-[#f8f6f1] via-[#e8e1d4] to-[#d8d0c2] shadow-[0_12px_35px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_18px_50px_rgba(0,0,0,0.10)]">
                 <div className="h-full rounded-[2rem] overflow-hidden bg-[#F7F3EB] flex flex-col">
 
-                  {/* Contenedor de Imagen */}
+                  {/* Imagen */}
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img
                       src={product.image}
-                      alt={`Medias premium ${product.name} de algodón orgánico`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      alt={`Medias premium ${product.name}`}
                       itemProp="image"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/10" />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10" />
                   </div>
 
-                  <div className="flex flex-col justify-between flex-1 px-6 py-6 bg-[#F7F3EB] border-t border-[#E7E0D2]">
-                    <div>
-                      <p className="text-[11px] uppercase tracking-[0.25em] text-[#1A1A1A]/40 font-semibold mb-3">
-                        {/* CORRECCIÓN: Google a veces no reconoce itemProp="category" en Product, usamos un texto plano */}
-                        <span>Medias de Algodón Orgánico</span>
-                      </p>
+                  {/* Info */}
+                  <div className="flex flex-col gap-4 px-6 py-6 bg-[#F7F3EB] border-t border-[#E7E0D2]">
+                    <h3
+                      itemProp="name"
+                      className="font-serif text-[1.7rem] leading-[1.15] text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors duration-300"
+                    >
+                      {product.name}
+                    </h3>
 
-                      <h3
-                        itemProp="name"
-                        className="font-serif text-[1.7rem] leading-[1.15] text-[#1A1A1A] group-hover:text-[#4A5D4E] transition-colors duration-300"
-                      >
-                        {product.name}
-                      </h3>
-
-                      <p
-                        itemProp="description"
-                        className="mt-3 text-[15px] leading-relaxed text-[#1A1A1A]/55 max-w-[26ch]"
-                      >
-                        Medias premium con tejido de 200 hilos para una suavidad y durabilidad superior.
-                      </p>
-                    </div>
-
-                    {/* SEO: Oferta y Precio */}
+                    {/* Precio */}
                     <div
-                      className="mt-6 pt-5 border-t border-[#E7E0D2] flex items-end justify-between"
                       itemProp="offers"
                       itemScope
                       itemType="https://schema.org/Offer"
                     >
-                      <div>
-                        <p className="text-[10px] uppercase tracking-[0.22em] text-[#1A1A1A]/35 font-semibold mb-1">
-                          Diseño Exclusivo
-                        </p>
-                        <link itemProp="availability" href="https://schema.org/InStock" />
-                        <span className="text-sm text-[#1A1A1A]/50">Stock limitado</span>
-                      </div>
+                      <meta itemProp="priceCurrency" content="PEN" />
+                      <meta itemProp="availability" content="https://schema.org/InStock" />
 
-                      <div className="text-right">
-                        {/* IMPORTANTE: El meta de moneda debe estar dentro del div con itemProp="offers" */}
-                        <meta itemProp="priceCurrency" content="PEN" />
-                        <p
-                          className="text-[#4A5D4E] font-semibold text-[1.7rem] tracking-tight"
-                        >
-                          S/ <span itemProp="price" content={product.price.toString()}>{product.price.toFixed(2)}</span>
-                        </p>
-                      </div>
+                      <p className="text-[#4A5D4E] font-semibold text-[1.7rem] tracking-tight">
+                        S/{" "}
+                        <span itemProp="price" content={product.price.toString()}>
+                          {product.price.toFixed(2)}
+                        </span>
+                      </p>
                     </div>
+
+                    {/* Tallas */}
+                    {product.sizes && product.sizes.length > 0 && (
+                      <div className="pt-2">
+                        <p className="text-[11px] uppercase tracking-[0.22em] font-bold text-[#1A1A1A]/45 mb-2">
+                          Tallas
+                        </p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {product.sizes.map((size) => (
+                            <span
+                              key={size}
+                              className="min-w-[62px] h-11 px-4 rounded-xl bg-white text-[#1A1A1A]/70 border border-[#1A1A1A]/10 text-sm font-bold flex items-center justify-center"
+                            >
+                              {size}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

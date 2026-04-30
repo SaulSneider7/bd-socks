@@ -36,7 +36,7 @@ const Philosophy = () => {
             <h2 className="text-5xl font-serif mb-8 leading-tight text-[#1A1A1A]">Alma Peruana, <br /><span className="italic text-[#4A5D4E]">Diseño Europeo.</span></h2>
             <div className="space-y-6 text-[#1A1A1A]/70 leading-relaxed">
               <p>
-                BD SOCKS es una marca peruana de calcetines, elaborados con algodón orgánico, sostenible y respetuoso con el medio ambiente, diseñados bajo los más altos estándares internacionales. Inspirados en la sofisticación del diseño europeo, ofrecemos productos reconocidos por su durabilidad y calidad superior, gracias a un tejido de 200 ahujas que garantiza un acabado impecable.
+                BD SOCKS es una marca peruana de calcetines, elaborados con algodón orgánico, sostenible y respetuoso con el medio ambiente, diseñados bajo los más altos estándares internacionales. Inspirados en la sofisticación del diseño europeo, ofrecemos productos reconocidos por su durabilidad y calidad superior, gracias a un tejido de 200 agujas que garantiza un acabado impecable.
               </p>
               <p>
                 Nuestros calcetines brindan comodidad, con un ajuste perfecto, diseño sin costuras que evita molestias y una alta transpirabilidad. Cuenta con propiedades hipoalergénicas que cuidan la piel y previenen irritaciones. Ofreciendo una experiencia fresca, protegida y confortable desde el primer paso.

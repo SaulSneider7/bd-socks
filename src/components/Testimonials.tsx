@@ -10,7 +10,7 @@ const testimonials = [
   },
   {
     name: "Andrea M.",
-    text: "El diseño minimalista es perfecto para mi estilo. Se nota la calidad de los 200 hilos desde el momento en que te los pones.",
+    text: "Compre estos calcetines para mi amiga y quedo feliz.",
     role: "Cliente Verificado",
     city: "Miraflores"
   },
@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     name: "Lucía F.",
-    text: "Excelente atención y el producto es de otro nivel. Son las mejores medias de algodón orgánico que he comprado en Lima.",
+    text: "Super comodos. Comprare más muy pronto.",
     role: "Cliente Verificado",
     city: "Surco"
   },

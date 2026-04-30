@@ -19,7 +19,7 @@ const Hero = () => {
             <span className="italic">en cada paso.</span>
           </h1>
           <p className="text-lg text-black/60 max-w-md mb-10 leading-relaxed">
-            Calcetines elaborados con algodon organico , tejido con 200 ahujas, desarrollado bajo estandares internacionales y diseños europeos para ofrecerte una calidad superior.
+            Calcetines elaborados con algodon organico , tejido con 200 agujas, desarrollado bajo estandares internacionales y diseños europeos para ofrecerte una calidad superior.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link 
