@@ -75,31 +75,21 @@ const ProductCard: React.FC<{
           {/* Botón de vista previa */}
           <div className="absolute top-4 right-4 z-10 flex flex-col gap-2 translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
             <button
-<<<<<<< HEAD
               onClick={() => onPreview(productImages)}
               className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1A1A1A] shadow-lg hover:bg-[#4A5D4E] hover:text-white transition-colors"
-=======
-              type="button"
-              onClick={() => onPreview(product.image)}
->>>>>>> aec87e994c11e9294afc6e40dced3f507b88ecf9
               title="Vista previa detallada"
               aria-label="Vista previa detallada"
-              className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1A1A1A] shadow-lg hover:bg-[#4A5D4E] hover:text-white transition-colors"
             >
               <FontAwesomeIcon icon={faExpand} className="text-sm" />
             </button>
           </div>
 
-<<<<<<< HEAD
           {productImages.length > 1 && (
             <div className="absolute bottom-4 right-4 z-10 rounded-full bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md">
               {productImages.length} vistas
             </div>
           )}
 
-=======
-          {/* Botón añadir al carrito */}
->>>>>>> aec87e994c11e9294afc6e40dced3f507b88ecf9
           <div className="absolute inset-x-4 bottom-4 z-10">
             {/* Mobile */}
             <button

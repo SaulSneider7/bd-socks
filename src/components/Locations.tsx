@@ -223,9 +223,6 @@ const Locations = () => {
             </motion.div>
           ))}
         </div>
-<<<<<<< HEAD
-=======
-
         {/* Physical Store Image Section */}
         <div className="mt-32 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -269,7 +266,6 @@ const Locations = () => {
             </div>
           </div>
         </div>
->>>>>>> aec87e994c11e9294afc6e40dced3f507b88ecf9
       </div>
     </section>
   );
