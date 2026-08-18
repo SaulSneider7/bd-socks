@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faExpand, faCartPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faExpand, faCartPlus, faXmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import productsData from '../products.json';
 
 interface Product {
@@ -11,8 +11,19 @@ interface Product {
   price: number;
   description: string;
   image: string;
+  images?: string[];
   sizes?: string[];
 }
+
+interface PreviewState {
+  images: string[];
+  activeIndex: number;
+}
+
+const getProductImages = (product: Product) => {
+  const images = product.images?.filter(Boolean) ?? [];
+  return images.length > 0 ? images : [product.image];
+};
 
 interface CatalogPageProps {
   addToCart: (p: Product, size?: string) => void;
@@ -21,9 +32,11 @@ interface CatalogPageProps {
 const ProductCard: React.FC<{
   product: Product,
   addToCart: (p: Product, s?: string) => void,
-  onPreview: (img: string) => void
+  onPreview: (images: string[], activeIndex?: number) => void
 }> = ({ product, addToCart, onPreview }) => {
   const [selectedSize, setSelectedSize] = useState<string | undefined>(product.sizes?.[0]);
+  const productImages = getProductImages(product);
+  const mainImage = productImages[0];
 
   return (
     <motion.div
@@ -41,16 +54,22 @@ const ProductCard: React.FC<{
 
       <div className="relative p-4">
         <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden bg-[#F3F0E8]">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10 z-[1]" />
+          <button
+            type="button"
+            onClick={() => onPreview(productImages)}
+            aria-label={`Ver imágenes de ${product.name}`}
+            className="absolute inset-0 z-0 block h-full w-full cursor-pointer text-left"
+          >
+            <img
+              src={mainImage}
+              alt={`Medias de algodón orgánico ${product.name} - Calidad 200 hilos`}
+              itemProp="image"
+              referrerPolicy="no-referrer"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
+            />
+          </button>
 
-          <img
-            src={product.image}
-            alt={`Medias de algodón orgánico ${product.name} - Calidad 200 hilos`}
-            itemProp="image"
-            referrerPolicy="no-referrer"
-            onClick={() => onPreview(product.image)}
-            className="w-full h-full object-cover cursor-pointer transition-transform duration-700 group-hover:scale-[1.08]"
-          />
+          <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-white/10 via-transparent to-black/10" />
 
           <div className="absolute top-4 left-4 z-10">
             <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-bold text-[#4A5D4E] shadow-lg">
@@ -60,13 +79,19 @@ const ProductCard: React.FC<{
 
           <div className="absolute top-4 right-4 z-10 flex flex-col gap-2 translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
             <button
-              onClick={() => onPreview(product.image)}
+              onClick={() => onPreview(productImages)}
               className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1A1A1A] shadow-lg hover:bg-[#4A5D4E] hover:text-white transition-colors"
               title="Vista previa detallada"
             >
               <FontAwesomeIcon icon={faExpand} className="text-sm" />
             </button>
           </div>
+
+          {productImages.length > 1 && (
+            <div className="absolute bottom-4 right-4 z-10 rounded-full bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+              {productImages.length} vistas
+            </div>
+          )}
 
           <div className="absolute inset-x-4 bottom-4 z-10">
             <button
@@ -161,11 +186,45 @@ const ProductCard: React.FC<{
 };
 
 const CatalogPage = ({ addToCart }: CatalogPageProps) => {
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [preview, setPreview] = useState<PreviewState | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (!preview) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setPreview(null);
+      if (event.key === 'ArrowLeft') {
+        setPreview(current => current && {
+          ...current,
+          activeIndex: (current.activeIndex - 1 + current.images.length) % current.images.length
+        });
+      }
+      if (event.key === 'ArrowRight') {
+        setPreview(current => current && {
+          ...current,
+          activeIndex: (current.activeIndex + 1) % current.images.length
+        });
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [preview]);
+
+  const openPreview = (images: string[], activeIndex = 0) => {
+    setPreview({ images, activeIndex });
+  };
+
+  const movePreview = (direction: -1 | 1) => {
+    setPreview(current => current && {
+      ...current,
+      activeIndex: (current.activeIndex + direction + current.images.length) % current.images.length
+    });
+  };
 
   return (
     <section className="pt-32 pb-24 px-6 min-h-screen bg-[#F9F7F2]" aria-labelledby="catalog-main-title">
@@ -209,23 +268,23 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
               key={product.id}
               product={product}
               addToCart={addToCart}
-              onPreview={setPreviewImage}
+              onPreview={openPreview}
             />
           ))}
         </div>
       </div>
 
       <AnimatePresence>
-        {previewImage && (
+        {preview && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#1A1A1A]/95 backdrop-blur-md"
-            onClick={() => setPreviewImage(null)}
+            onClick={() => setPreview(null)}
           >
             <button
-              onClick={() => setPreviewImage(null)}
+              onClick={() => setPreview(null)}
               aria-label="Cerrar vista previa"
               className="fixed top-6 right-6 w-10 h-10 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all z-[110] border border-white/20"
             >
@@ -239,12 +298,47 @@ const CatalogPage = ({ addToCart }: CatalogPageProps) => {
               className="relative max-w-5xl max-h-[85vh] w-full flex items-center justify-center overflow-hidden"
               onClick={e => e.stopPropagation()}
             >
+              {preview.images.length > 1 && (
+                <button
+                  onClick={() => movePreview(-1)}
+                  aria-label="Ver imagen anterior"
+                  className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center border border-white/20"
+                >
+                  <FontAwesomeIcon icon={faChevronLeft} />
+                </button>
+              )}
+
               <img
-                src={previewImage}
-                className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl"
-                alt="Detalle de medias premium"
+                src={preview.images[preview.activeIndex]}
+                className="max-w-full max-h-[68vh] object-contain rounded-2xl shadow-2xl"
+                alt={`Detalle de medias premium, imagen ${preview.activeIndex + 1} de ${preview.images.length}`}
                 referrerPolicy="no-referrer"
               />
+
+              {preview.images.length > 1 && (
+                <button
+                  onClick={() => movePreview(1)}
+                  aria-label="Ver imagen siguiente"
+                  className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center border border-white/20"
+                >
+                  <FontAwesomeIcon icon={faChevronRight} />
+                </button>
+              )}
+
+              {preview.images.length > 1 && (
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex max-w-full gap-2 overflow-x-auto px-2 pb-1">
+                  {preview.images.map((image, index) => (
+                    <button
+                      key={image}
+                      onClick={() => setPreview(current => current && { ...current, activeIndex: index })}
+                      aria-label={`Ver imagen ${index + 1}`}
+                      className={`h-16 w-14 shrink-0 overflow-hidden rounded-lg border-2 transition-opacity ${index === preview.activeIndex ? 'border-white opacity-100' : 'border-white/30 opacity-60 hover:opacity-100'}`}
+                    >
+                      <img src={image} alt="" className="h-full w-full object-cover" referrerPolicy="no-referrer" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}

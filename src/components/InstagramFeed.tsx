@@ -10,7 +10,7 @@ const instagramPosts = [
     { id: 3, image: "/instagram3.webp", url: "https://www.instagram.com/bdsocks.latam/", alt: "Comunidad usando medias de algodón orgánico" },
     { id: 4, image: "/instagram4.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=3", alt: "Estilo urbano con medias de alta calidad" },
     { id: 5, image: "/instagram5.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=4", alt: "Detalle de textura medias 200 hilos" },
-    { id: 6, image: "/instagram6.webp", url: "https://www.instagram.com/holidayskidsoriginal", alt: "Colección exclusiva BD SOCKS" },
+    // { id: 6, image: "/instagram6.webp", url: "https://www.instagram.com/holidayskidsoriginal", alt: "Colección exclusiva BD SOCKS" },
 ];
 
 const InstagramFeed = () => {

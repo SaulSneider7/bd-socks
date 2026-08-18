@@ -48,7 +48,7 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
           <img
             src="/logo.png"
             alt="BD SOCKS"
-            className="w-35 object-contain"
+            className="w-25 object-contain"
           />
         </Link>
 

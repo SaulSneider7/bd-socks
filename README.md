@@ -1,5 +1,18 @@
 # React + TypeScript + Vite
 
+## Imágenes de productos
+
+Cada producto debe conservar `image` como imagen principal. Para mostrar una galería en el catálogo, agrega `images` con todas las rutas, incluida la principal:
+
+```json
+{
+  "image": "/producto-principal.webp",
+  "images": ["/producto-principal.webp", "/producto-detalle.webp"]
+}
+```
+
+Si un producto no tiene `images`, el catálogo utiliza únicamente `image`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

@@ -2,73 +2,224 @@
   {
     "id": 1,
     "name": "Crema Fit",
-    "price": 28.00,
+    "price": 24.00,
     "description": "Cod. 1090201",
     "image": "/1.webp",
+    "images": ["/1.webp", "/medias_crema_fit_1.png", "/medias_crema_fit_2.png"],
     "sizes": ["36/40"]
   },
   {
     "id": 2,
     "name": "Jade Tricolor",
-    "price": 28.00,
+    "price": 24.00,
     "description": "Cod. 1050302",
     "image": "/2.webp",
+    "images": ["/2.webp", "/Jade_Tricolor_2.jpeg"],
     "sizes": ["36/40"]
   },
   {
     "id": 3,
     "name": "Blend Socks",
-    "price": 28.00,
+    "price": 24.00,
     "description": "Cod. 1080401",
     "image": "/3.webp",
+    "images": ["/3.webp", "/blend_socks_1.png", "/blend_socks_2.png"],
     "sizes": ["36/40"]
   },
   {
     "id": 4,
     "name": "Beige Vibe",
-    "price": 28.00,
+    "price": 24.00,
     "description": "Cod. 1060301",
     "image": "/4.webp",
+    "images": ["/4.webp", "/Beige_vibe2.png", "/Beige_Vibe.png"],
     "sizes": ["36/40"]
   },
   {
     "id": 5,
     "name": "Base Socks",
-    "price": 28.00,
+    "price": 24.00,
     "description": "Cod. 1030303",
     "image": "/5.webp",
+    "images": ["/5.webp", "/Base_Socks.png"],
     "sizes": ["36/40"]
   },
   {
     "id": 6,
     "name": "Blanco Step",
-    "price": 28.00,
+    "price": 24.00,
     "description": "Cod. 1020303",
     "image": "/6.webp",
+    "images": ["/6.webp", "/Blanco_Step_1.png", "/Blanco_Step_2.png", "/Blanco_Step_3.png"],
     "sizes": ["36/40"]
   },
   {
     "id": 7,
     "name": "Avo Low Cut",
-    "price": 25.00,
+    "price": 19.00,
     "description": "Cod. 1010102",
     "image": "/7.webp",
+    "images": ["/7.webp", "/avo_low_cute.jpg", "/avo_low_cute_2.png"],
     "sizes": ["36/40"]
   },
   {
     "id": 8,
     "name": "Zebra Carina",
-    "price": 25.00,
+    "price": 19.00,
     "description": "Cod. 1040102",
     "image": "/8.webp",
+    "images": ["/8.webp", "/Zebra_2.png", "/Zebra_3.png"],
     "sizes": ["36/40"]
   },
   {
     "id": 9,
     "name": "Lumin Socks",
-    "price": 28.00,
+    "price": 24.00,
     "description": "Cod. 1070404",
     "image": "/9.webp",
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 10,
+    "name": "Ankle amore",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/Ankle_amore_1.jpg",
+    "images": ["/Ankle_amore_1.jpg", "/Ankle_amore_2.jpg", "/Ankle_amore_3.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 11,
+    "name": "Ankle Blue Cube",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_blue_cube_1.png",
+    "images": ["/ankle_blue_cube_1.png", "/ankle_blue_cube_2.jpg", "/ankle_blue_cube_3.png"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 12,
+    "name": "Ankle Black Cube",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_black_cube_1.jpg",
+    "images": ["/ankle_black_cube_1.jpg", "/ankle_black_cube_2.jpg", "/ankle_black_cube_3.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 13,
+    "name": "Ankle Coco Dog",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_coco_dog_1.png",
+    "images": ["/ankle_coco_dog_1.png", "/ankle_coco_dog_2.jpg", "/ankle_coco_dog_3.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 14,
+    "name": "Ankle Blue Puppy",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_blue_puppy_1.png",
+    "images": ["/ankle_blue_puppy_1.png", "/ankle_blue_puppy_2.png"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 15,
+    "name": "Ankle Geo Pink",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_geo_pink_1.png",
+    "images": ["/ankle_geo_pink_1.png", "/ankle_geo_pink_2.jpg", "/ankle_geo_pink_3.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 16,
+    "name": "Ankle Happy Panda",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_happy_panda_1.png",
+    "images": ["/ankle_happy_panda_1.png", "/ankle_happy_panda_2.png"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 18,
+    "name": "Ankle Sketch Pop",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_sketch_pop_1.jpg",
+    "images": ["/ankle_sketch_pop_1.jpg", "/ankle_sketch_pop_2.png"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 19,
+    "name": "Ankle Red Cube",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_red_cube_1.jpg",
+    "images": ["/ankle_red_cube_1.jpg", "/ankle_red_cube_2.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 20,
+    "name": "Ankle Monkey Fun",
+    "price": 19.00,
+    "description": "Cod. 1070404",
+    "image": "/ankle_monkey_fun_1.png",
+    "images": ["/ankle_monkey_fun_1.png", "/ankle_monkey_fun_2.jpg", "/ankle_monkey_fun_3.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 21,
+    "name": "Ribbed Blue Sea",
+    "price": 24.00,
+    "description": "Cod. 1070404",
+    "image": "/ribbed_blue_sea_1.jpg",
+    "images": ["/ribbed_blue_sea_1.jpg", "/ribbed_blue_sea_2.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 22,
+    "name": "Ribbed Coral Pop",
+    "price": 24.00,
+    "description": "Cod. 1070404",
+    "image": "/ribbed_coral_pop_1.jpg",
+    "images": ["/ribbed_coral_pop_1.jpg", "/ribbed_coral_pop_2.png"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 23,
+    "name": "Ribbed Light Blue",
+    "price": 24.00,
+    "description": "Cod. 1070404",
+    "image": "/ribbed_light_blue_1.jpg",
+    "images": ["/ribbed_light_blue_1.jpg", "/ribbed_light_blue_2.jpeg", "/ribbed_light_blue_3.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 24,
+    "name": "Ribbed Sunset",
+    "price": 24.00,
+    "description": "Cod. 1070404",
+    "image": "/Ribbed_Sunset_1.jpg",
+    "images": ["/Ribbed_Sunset_1.jpg", "/Ribbed_Sunset_2.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 25,
+    "name": "Ribbed",
+    "price": 24.00,
+    "description": "Cod. 1070404",
+    "image": "/Ribbed_1.jpg",
+    "images": ["/Ribbed_1.jpg", "/Ribbed_2.jpg", "/Ribbed_3.jpg"],
+    "sizes": ["36/40"]
+  },
+  {
+    "id": 26,
+    "name": "Medias Amarillas",
+    "price": 24.00,
+    "description": "Cod. 1070404",
+    "image": "/medias_amarillas.png",
     "sizes": ["36/40"]
   }
 ]

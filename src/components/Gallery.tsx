@@ -86,7 +86,7 @@ const Gallery: React.FC = () => {
                                 <div className="w-8 h-8 rounded-lg bg-[#B59410] flex items-center justify-center text-white">
                                     <FontAwesomeIcon icon={faHashtag} size="sm" />
                                 </div>
-                                <span className="text-xl font-serif font-bold text-[#1A1A1A] uppercase tracking-wider">Socks with Stories</span>
+                                <span className="text-xl font-serif font-bold text-[#1A1A1A] uppercase tracking-wider">Two moments. One story </span>
                             </div>
                             <p className="text-[#1A1A1A]/50 text-sm font-light">
                                 Únete a nuestra comunidad y descubre el confort del algodón premium.

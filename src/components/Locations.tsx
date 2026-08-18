@@ -4,41 +4,152 @@ import { motion } from 'framer-motion';
 
 const Locations = () => {
   const locations = [
+    // {
+    //   title: "Cencosud Retail",
+    //   logo: "/cenco-logo.jpeg",
+    //   items: [
+    //     {
+    //       label: "C.C. Plaza Lima Sur - Chorrillos",
+    //       href: "https://maps.app.goo.gl/BPnJozvraXRtLJiU6"
+    //     },
+    //     {
+    //       label: "Cenco Metro Canadá",
+    //       href: "https://maps.app.goo.gl/S7tGTgXpYoW46Gjb6"
+    //     }
+    //   ]
+    // },
+    // {
+    //   title: "MNK Store",
+    //   logo: "/mnk-logo.png",
+    //   items: [
+    //     {
+    //       label: "CC. El Polo 2 Tda. B209 - Surco",
+    //       href: "https://maps.app.goo.gl/p5fyWPKwHhuQvpJz6"
+    //     },
+    //     {
+    //       label: "Av. Cavenecia 225 Tda. 111 - San Isidro",
+    //       href: "https://maps.app.goo.gl/8RhvC8H6tLUEAjYk9"
+    //     }
+    //   ]
+    // },
+
     {
-      title: "Cencosud Retail",
-      logo: "/cenco-logo.jpeg",
+      title: "Tienda Barbadens",
+      logo: "/barbadens-logo.png",
       items: [
         {
-          label: "C.C. Plaza Lima Sur - Chorrillos",
-          href: "https://maps.app.goo.gl/BPnJozvraXRtLJiU6"
+          label: "Ca. Chinchón 944 San Isidro",
+          href: "https://maps.app.goo.gl/TQRsNu17YyJbUCBB8"
         },
         {
-          label: "Cenco Metro Canadá",
-          href: "https://maps.app.goo.gl/S7tGTgXpYoW46Gjb6"
+          label: "Circunvalación Golf Los Incas 170 Surco",
+          href: "Av. Club Golf los Incas 170, Santiago de Surco 15023"
+        }
+      ]
+    },
+
+    {
+      title: "Tienda Japy Detalles y Globos",
+      logo: "/japy-logo.png",
+      items: [
+        {
+          label: "Camino Real 485 San Isidro, Lima, Lima",
+          href: "https://maps.app.goo.gl/LUpS6qctswgSNBJ1A"
+        }
+      ]
+    },
+
+    {
+      title: "Tienda Anel Joyeria",
+      logo: "/anel-logo.png",
+      items: [
+        {
+          label: "Pje. Porta 115, Tienda 1 , MIRAFLORES 15074, Lima",
+          href: "https://maps.app.goo.gl/oz7jmT8UyBP5yULj8"
+        }
+      ]
+    },
+
+    {
+      title: "Tienda Ojos de Luna",
+      logo: "/ojos-de-luna-logo.png",
+      items: [
+        {
+          label: "La Molina | CC La Rotonda 2050",
+          href: "https://maps.app.goo.gl/TGFtocgerTMcnvmp8"
+        }
+      ]
+    },
+
+    {
+      title: "Tienda 4Essen",
+      logo: "/4essen-logo.png",
+      items: [
+        {
+          label: "Av. Conquistadores 489 - San Isidro",
+          href: "https://maps.app.goo.gl/CyF9yoCXEJcMnxYh9"
+        }
+      ]
+    },
+
+    {
+      title: "Tienda Amavia",
+      logo: "/amavia-logo.png",
+      items: [
+        {
+          label: "Avenida Juan Pablo II 417 ref. frente a la segunda puerta de la UNT.  - Trujillo",
+          href: "https://maps.app.goo.gl/mr8RUrBJngbjBFKi9"
+        }
+      ]
+    },
+
+    {
+      title: "Tienda Malena Concept",
+      logo: "/malena-logo.png",
+      items: [
+        {
+          label: "Calle La Arboleda 771 -California - Trujillo.",
+          href: "https://maps.app.goo.gl/GqCxL6RqVzXAR9hQ8"
+        }
+      ]
+    },
+    // {
+    //   title: "HOLIDAY'S KIDS",
+    //   logo: "/holiday-logo.png",
+    //   items: [
+    //     {
+    //       label: "Showroom La Molina",
+    //       href: "https://maps.app.goo.gl/L7ukZrLVoviJ5UYc6"
+    //     }
+    //   ]
+    // },
+    {
+      title: "CocoDeli concept",
+      logo: "/cocodeli-logo.png",
+      items: [
+        {
+          label: "Jr. Cusco 202 - Ayacucho",
+          href: "https://maps.app.goo.gl/71HKg4cdUx53s5vC7"
         }
       ]
     },
     {
-      title: "MNK Store",
-      logo: "/mnk-logo.png",
+      title: "LOLLIPOPS",
+      logo: "/lollipops-logo.png",
       items: [
         {
-          label: "CC. El Polo 2 Tda. B209 - Surco",
-          href: "https://maps.app.goo.gl/p5fyWPKwHhuQvpJz6"
-        },
-        {
-          label: "Av. Cavenecia 225 Tda. 111 - San Isidro",
-          href: "https://maps.app.goo.gl/8RhvC8H6tLUEAjYk9"
+          label: "Av. Larco 345 Tda M2 - Miraflores",
+          href: "https://maps.app.goo.gl/wiT87LnTRQeoUyeh7"
         }
       ]
     },
     {
-      title: "HOLIDAY'S KIDS",
-      logo: "/holiday-logo.png",
+      title: "MAGNA",
+      logo: "/magna-logo.png",
       items: [
         {
-          label: "Showroom La Molina",
-          href: "https://maps.app.goo.gl/L7ukZrLVoviJ5UYc6"
+          label: "C.C. Caminos del Inca  Tda. 75 2do piso - Surco",
+          href: "https://maps.app.goo.gl/pr2ibx84CCMp8RrcA"
         }
       ]
     }
@@ -111,38 +222,6 @@ const Locations = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Physical Store Image Section */}
-        <div className="mt-32 grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl"
-          >
-            <img
-              src="/tienda.jpeg"
-              alt="BD SOCKS Physical Store"
-              className="w-full h-full object-cover  transition-all duration-1000"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
-          <div className="space-y-8">
-            <h3 className="text-4xl font-serif text-[#1A1A1A]">Nuestra Tienda</h3>
-            <p className="text-[#1A1A1A]/70 leading-relaxed">
-              Un espacio creado para transmitir la calidad y el cuidado detrás de cada una de nuestras medias. Te invitamos a descubrir la colección completa y sentir en persona la suavidad y precisión del algodón de 200 hilos.
-            </p>
-            <div className="flex items-center space-x-4 text-[#C5A059]">
-              <div className="w-12 h-12 rounded-full bg-[#4A5D4E]/10 flex items-center justify-center">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest font-bold text-[#1A1A1A]/40">Ubicación Principal</p>
-                <p className="text-lg font-serif text-[#1A1A1A]">Lima, Perú</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
