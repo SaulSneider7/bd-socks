@@ -10,25 +10,25 @@ const testimonials = [
   },
   {
     name: "Andrea M.",
-    text: "El diseño minimalista es perfecto para mi estilo. Se nota la calidad de los 200 hilos desde el momento en que te los pones.",
+    text: "Compre estos calcetines para mi amiga y quedo feliz.",
     role: "Cliente Verificado",
     city: "Miraflores"
   },
   {
     name: "Ricardo G.",
-    text: "Buscaba medias de buena calidad para el día a día y estas superaron mis expectativas. No se bajan y el ajuste es perfecto.",
+    text: "Buscaba calcetines de buena calidad para el día a día y estas superaron mis expectativas. No se bajan y el ajuste es perfecto.",
     role: "Ejecutivo",
     city: "San Isidro"
   },
   {
     name: "Lucía F.",
-    text: "Excelente atención y el producto es de otro nivel. Son las mejores medias de algodón orgánico que he comprado en Lima.",
+    text: "Super comodos. Comprare más muy pronto.",
     role: "Cliente Verificado",
     city: "Surco"
   },
   {
     name: "Mateo S.",
-    text: "Ideales para regalo. El empaque y la calidad de las medias demuestran que cuidan cada detalle.",
+    text: "Ideales para regalo. El empaque y la calidad de los calcetines demuestran que cuidan cada detalle.",
     role: "Cliente Verificado",
     city: "La Molina"
   }
@@ -50,7 +50,7 @@ const Testimonials = () => {
             La Experiencia <span className="text-[#C5A059]">BD SOCKS</span>
           </h2>
           <p className="text-white/60 uppercase tracking-[0.2em] text-xs font-bold">
-            Lo que dicen de nuestras medias premium
+            Lo que dicen de nuestros calcetines
           </p>
         </div>
 

@@ -38,12 +38,9 @@ const Gallery: React.FC = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-serif font-bold text-[#1A1A1A] mb-4"
                     >
-                        Inspiración en <span className="text-[#B59410] italic">Medias Premium</span>
+                        Calcetines para <span className="text-[#B59410] italic">Momentos &Uacute;nicos</span>
                     </motion.h2>
                     <div className="w-20 h-1 bg-[#B59410] mx-auto mb-6" aria-hidden="true" />
-                    <p className="text-lg text-[#1A1A1A]/60 max-w-2xl mx-auto font-light">
-                        <strong>Calidad excepcional de 200 hilos</strong> en cada detalle. Explora el estilo y la suavidad de nuestras <strong>medias de algodón orgánico</strong>.
-                    </p>
                 </div>
 
                 {/* Grid con Microdatos de Galería */}

@@ -223,6 +223,53 @@ const Locations = () => {
             </motion.div>
           ))}
         </div>
+<<<<<<< HEAD
+=======
+
+        {/* Physical Store Image Section */}
+        <div className="mt-32 grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <img
+              src="/tienda.jpeg"
+              alt="BD SOCKS Physical Store"
+              className="w-full h-full object-cover  transition-all duration-1000"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+          <div className="space-y-8 rounded-[32px] bg-white border border-[#1A1A1A]/[0.06] p-8 md:p-10 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] font-bold text-[#C5A059] mb-3">
+                Visítanos
+              </p>
+
+              <h3 className="text-4xl md:text-5xl font-serif text-[#1A1A1A] leading-tight">
+                Nuestra Tienda
+              </h3>
+            </div>
+
+            <div className="flex items-center gap-5 rounded-[24px] bg-[#F8F7F3] border border-[#1A1A1A]/[0.05] p-5 md:p-6">
+              <div className="w-16 h-16 rounded-full bg-[#4A5D4E]/10 flex items-center justify-center text-[#C5A059] shrink-0">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="w-7 h-7" />
+              </div>
+
+              <div>
+                <p className="text-xs uppercase tracking-[0.22em] font-bold text-[#1A1A1A]/40 mb-1">
+                  Ubicación Principal
+                </p>
+
+                <p className="text-2xl md:text-3xl font-serif text-[#1A1A1A]">
+                  Lima, Perú
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+>>>>>>> aec87e994c11e9294afc6e40dced3f507b88ecf9
       </div>
     </section>
   );
