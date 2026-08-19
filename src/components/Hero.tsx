@@ -1,9 +1,27 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+const heroSlides = [
+  { src: '/Portada_1.webp', alt: 'BD SOCKS Premium' },
+  { src: '/Portada_2.webp', alt: 'Colección de calcetines BD SOCKS' },
+  { src: '/Portada_3.webp', alt: 'Diseños BD SOCKS' },
+  { src: '/Portada_4.webp', alt: 'Colección de medias BD SOCKS' },
+];
+
 const Hero = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveSlide((currentSlide) => (currentSlide + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <section className="pt-32 pb-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -44,15 +62,34 @@ const Hero = () => {
           viewport={{ once: true }}
           className="relative aspect-[4/5] bg-neutral-100 rounded-3xl overflow-hidden shadow-2xl"
         >
-          <img 
-            src="/hero.webp" 
-            alt="BD SOCKS Premium"
-            className="w-full h-full object-cover brightness-90 hover:scale-105 transition-transform duration-[2s]"
-            referrerPolicy="no-referrer"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={heroSlides[activeSlide].src}
+              src={heroSlides[activeSlide].src}
+              alt={heroSlides[activeSlide].alt}
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.01 }}
+              transition={{ duration: 1.0, ease: 'easeInOut' }}
+              className="absolute inset-0 w-full h-full object-cover brightness-90"
+              referrerPolicy="no-referrer"
+            />
+          </AnimatePresence>
           <div className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-white max-w-[240px]">
             <p className="text-xs uppercase tracking-widest font-bold mb-2">Algodón Orgánico</p>
             <p className="text-sm italic opacity-80">"Calcetines que combinan comodidad con sostenibilidad"</p>
+          </div>
+          <div className="absolute bottom-8 right-8 flex gap-2" aria-label="Seleccionar imagen del hero">
+            {heroSlides.map((slide, index) => (
+              <button
+                key={slide.src}
+                type="button"
+                aria-label={`Mostrar imagen ${index + 1}`}
+                aria-current={activeSlide === index}
+                onClick={() => setActiveSlide(index)}
+                className={`h-2 rounded-full transition-all ${activeSlide === index ? 'w-8 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'}`}
+              />
+            ))}
           </div>
         </motion.div>
       </div>

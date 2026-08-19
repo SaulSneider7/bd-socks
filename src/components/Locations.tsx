@@ -35,7 +35,7 @@ const Locations = () => {
 
     {
       title: "Tienda Barbadens",
-      logo: "/barbadens-logo.png",
+      logo: "/barbadens-logo.webp",
       items: [
         {
           label: "Ca. Chinchón 944 San Isidro",
@@ -50,7 +50,7 @@ const Locations = () => {
 
     {
       title: "Tienda Japy Detalles y Globos",
-      logo: "/japy-logo.png",
+      logo: "/japy-logo.webp",
       items: [
         {
           label: "Camino Real 485 San Isidro, Lima, Lima",
@@ -61,7 +61,7 @@ const Locations = () => {
 
     {
       title: "Tienda Anel Joyeria",
-      logo: "/anel-logo.png",
+      logo: "/anel-logo.webp",
       items: [
         {
           label: "Pje. Porta 115, Tienda 1 , MIRAFLORES 15074, Lima",
@@ -72,7 +72,7 @@ const Locations = () => {
 
     {
       title: "Tienda Ojos de Luna",
-      logo: "/ojos-de-luna-logo.png",
+      logo: "/ojos-de-luna-logo.webp",
       items: [
         {
           label: "La Molina | CC La Rotonda 2050",
@@ -83,7 +83,7 @@ const Locations = () => {
 
     {
       title: "Tienda 4Essen",
-      logo: "/4essen-logo.png",
+      logo: "/4essen-logo.webp",
       items: [
         {
           label: "Av. Conquistadores 489 - San Isidro",
@@ -94,7 +94,7 @@ const Locations = () => {
 
     {
       title: "Tienda Amavia",
-      logo: "/amavia-logo.png",
+      logo: "/amavia-logo.webp",
       items: [
         {
           label: "Avenida Juan Pablo II 417 ref. frente a la segunda puerta de la UNT.  - Trujillo",
@@ -105,7 +105,7 @@ const Locations = () => {
 
     {
       title: "Tienda Malena Concept",
-      logo: "/malena-logo.png",
+      logo: "/malena-logo.webp",
       items: [
         {
           label: "Calle La Arboleda 771 -California - Trujillo.",
@@ -125,7 +125,7 @@ const Locations = () => {
     // },
     {
       title: "CocoDeli concept",
-      logo: "/cocodeli-logo.png",
+      logo: "/cocodeli-logo.webp",
       items: [
         {
           label: "Jr. Cusco 202 - Ayacucho",
@@ -135,7 +135,7 @@ const Locations = () => {
     },
     {
       title: "LOLLIPOPS",
-      logo: "/lollipops-logo.png",
+      logo: "/lollipops-logo.webp",
       items: [
         {
           label: "Av. Larco 345 Tda M2 - Miraflores",
@@ -145,7 +145,7 @@ const Locations = () => {
     },
     {
       title: "MAGNA",
-      logo: "/magna-logo.png",
+      logo: "/magna-logo.webp",
       items: [
         {
           label: "C.C. Caminos del Inca  Tda. 75 2do piso - Surco",

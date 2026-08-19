@@ -35,8 +35,24 @@ const ProductCard: React.FC<{
   onPreview: (images: string[], activeIndex?: number) => void
 }> = ({ product, addToCart, onPreview }) => {
   const [selectedSize, setSelectedSize] = useState<string | undefined>(product.sizes?.[0]);
+  const [activeImage, setActiveImage] = useState(0);
+  const [isImageHovered, setIsImageHovered] = useState(false);
   const productImages = getProductImages(product);
-  const mainImage = productImages[0];
+
+  useEffect(() => {
+    if (!isImageHovered || productImages.length < 2) return;
+
+    const interval = window.setInterval(() => {
+      setActiveImage((currentImage) => (currentImage + 1) % productImages.length);
+    }, 1400);
+
+    return () => window.clearInterval(interval);
+  }, [isImageHovered, productImages.length]);
+
+  const handleImageLeave = () => {
+    setIsImageHovered(false);
+    setActiveImage(0);
+  };
 
   return (
     <motion.div
@@ -54,20 +70,31 @@ const ProductCard: React.FC<{
 
       <div className="relative p-4">
         {/* Imagen del producto */}
-        <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden bg-[#F3F0E8]">
+        <div
+          className="relative aspect-[3/4] rounded-[24px] overflow-hidden bg-[#F3F0E8]"
+          onMouseEnter={() => setIsImageHovered(true)}
+          onMouseLeave={handleImageLeave}
+        >
           <button
             type="button"
             onClick={() => onPreview(productImages)}
             aria-label={`Ver imágenes de ${product.name}`}
             className="absolute inset-0 z-0 block h-full w-full cursor-pointer text-left"
           >
-            <img
-              src={mainImage}
-              alt={`Medias de algodón orgánico ${product.name} - Calidad 200 hilos`}
-              itemProp="image"
-              referrerPolicy="no-referrer"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={productImages[activeImage]}
+                src={productImages[activeImage]}
+                alt={`Medias de algodón orgánico ${product.name} - Calidad 200 hilos`}
+                itemProp="image"
+                referrerPolicy="no-referrer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.45, ease: 'easeInOut' }}
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
+              />
+            </AnimatePresence>
           </button>
 
           <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-white/10 via-transparent to-black/10" />
