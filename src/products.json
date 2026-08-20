@@ -49,8 +49,8 @@
     "name": "Blanco Step",
     "price": 24.00,
     "description": "Cod. 1020303",
-    "image": "/6.webp",
-    "images": ["/6.webp", "/Blanco_Step_1.webp", "/Blanco_Step_2.webp", "/Blanco_Step_3.webp"],
+    "image": ["/Banco_Step_1.webp"],
+    "images": [ "/Blanco_Step_1.webp", "/Blanco_Step_2.webp", "/Blanco_Step_3.webp"],
     "sizes": ["36/40"]
   },
   {

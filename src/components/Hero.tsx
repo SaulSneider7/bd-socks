@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const heroSlides = [
-  { src: '/Portada_1.webp', alt: 'BD SOCKS Premium' },
-  { src: '/Portada_2.webp', alt: 'Colección de calcetines BD SOCKS' },
-  { src: '/Portada_3.webp', alt: 'Diseños BD SOCKS' },
-  { src: '/Portada_4.webp', alt: 'Colección de medias BD SOCKS' },
+  { src: '/portada_1.webp', alt: 'BD SOCKS Premium' },
+  { src: '/portada_2.webp', alt: 'Colección de calcetines BD SOCKS' },
+  { src: '/portada_3.webp', alt: 'Diseños BD SOCKS' },
+  { src: '/portada_4.webp', alt: 'Colección de medias BD SOCKS' },
 ];
 
 const Hero = () => {

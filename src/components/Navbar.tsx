@@ -46,7 +46,7 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
           className="flex items-center"
         >
           <img
-            src="/logo.png"
+            src="/logo_bd.png"
             alt="BD SOCKS"
             className="w-25 object-contain"
           />
