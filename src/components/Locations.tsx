@@ -4,20 +4,20 @@ import { motion } from 'framer-motion';
 
 const Locations = () => {
   const locations = [
-    // {
-    //   title: "Cencosud Retail",
-    //   logo: "/cenco-logo.jpeg",
-    //   items: [
-    //     {
-    //       label: "C.C. Plaza Lima Sur - Chorrillos",
-    //       href: "https://maps.app.goo.gl/BPnJozvraXRtLJiU6"
-    //     },
-    //     {
-    //       label: "Cenco Metro Canadá",
-    //       href: "https://maps.app.goo.gl/S7tGTgXpYoW46Gjb6"
-    //     }
-    //   ]
-    // },
+    {
+      title: "Cencosud Retail",
+      logo: "/cenco-logo.jpeg",
+      items: [
+        {
+          label: "C.C. Plaza Lima Sur - Chorrillos",
+          href: "https://maps.app.goo.gl/BPnJozvraXRtLJiU6"
+        },
+        {
+          label: "Cenco Metro Canadá",
+          href: "https://maps.app.goo.gl/S7tGTgXpYoW46Gjb6"
+        }
+      ]
+    },
     // {
     //   title: "MNK Store",
     //   logo: "/mnk-logo.png",

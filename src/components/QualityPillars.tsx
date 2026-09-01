@@ -23,10 +23,9 @@ const QualityPillars = () => {
             className="space-y-6 text-center"
           >
             <div className="text-6xl font-serif italic text-[#4A5D4E]" aria-hidden="true">01</div>
-            {/* SEO: H3 con palabra clave específica */}
-            <h3 className="text-2xl font-serif">Tejido de 200 agujas</h3>
+            <h3 className="text-2xl font-serif">Tejido de alta densidad</h3>
             <p className="text-white/50 text-sm leading-relaxed">
-              Nuestras <strong>calcetines tejidas con 200 agujas</strong>. Nuestro fabricante utiliza maquinas de 200 agujas, lo que proporciona una textura más fina, suave y resistente. Su tejido de alta densidad mejora la durabilidad y el confort, ofreciendo una experiencia superior en cada uso.
+              Nuestro tejido de alta densidad proporciona una textura fina, suave y resistente. Su construcción mejora la durabilidad y el confort, ofreciendo una experiencia superior en cada uso.
             </p>
           </motion.div>
 

@@ -8,9 +8,14 @@ const instagramPosts = [
     { id: 1, image: "/galeria5.webp", url: "https://www.instagram.com/p/DW9-QYBjm3c/?img_index=1", alt: "Outfits con medias premium de 200 hilos" },
     { id: 2, image: "/instagram2.png", url: "https://www.instagram.com/p/DVrKFaoDlZx/?hl=es&img_index=3", alt: "Diseño de calcetines orgánicos BD SOCKS" },
     { id: 3, image: "/instagram3.webp", url: "https://www.instagram.com/bdsocks.latam/", alt: "Comunidad usando medias de algodón orgánico" },
-    { id: 4, image: "/instagram4.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=3", alt: "Estilo urbano con medias de alta calidad" },
-    { id: 5, image: "/instagram5.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=4", alt: "Detalle de textura medias 200 hilos" },
+    // { id: 4, image: "/instagram4.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=3", alt: "Estilo urbano con medias de alta calidad" },
+    // { id: 5, image: "/instagram5.png", url: "https://www.instagram.com/p/DS6FhymDA47/?hl=es&img_index=4", alt: "Detalle de textura medias 200 hilos" },
     // { id: 6, image: "/instagram6.webp", url: "https://www.instagram.com/holidayskidsoriginal", alt: "Colección exclusiva BD SOCKS" },
+    { id: 4, image: "/instagram4.webp", url: "https://www.instagram.com/p/DcZdEm1PoNt/?hl=es", alt: "Comunidad usando medias de algodón orgánico" },
+    { id: 5, image: "/instagram5.webp", url: "https://www.instagram.com/p/DcKRWsRDk-X/?hl=es&img_index=1", alt: "Comunidad usando medias de algodón orgánico" },
+    { id: 6, image: "/instagram6_2.webp", url: "https://www.instagram.com/bdsocks.latam/", alt: "Comunidad usando medias de algodón orgánico" },
+
+
 ];
 
 const InstagramFeed = () => {
