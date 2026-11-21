@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useContent } from '../content/ContentContext';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen: (open: boolean) => void }) => {
+  const { images } = useContent();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ const Navbar = ({ cartCount, setIsCartOpen }: { cartCount: number, setIsCartOpen
           className="flex items-center"
         >
           <img
-            src="/logo_bd.png"
+            src={images['branding.1']?.src}
             alt="BD SOCKS"
             className="w-25 object-contain"
           />

@@ -1,9 +1,11 @@
+import { useContent } from './content/ContentContext';
 import { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
+import CampaignBanner from './components/CampaignBanner';
 import Philosophy from './components/Philosophy';
 import QualityPillars from './components/QualityPillars';
 import FeaturedProducts from './components/FeaturedProducts';
@@ -49,6 +51,7 @@ const HomePage = () => {
 
     return (
         <>
+            <CampaignBanner />
             <Hero />
             <Philosophy />
             <QualityPillars />
@@ -64,15 +67,25 @@ const HomePage = () => {
 
 // --- Main App Component ---
 export default function App() {
+    const { products } = useContent();
     // 1. Estado del Carrito con LocalStorage
     const [cart, setCart] = useState<CartItem[]>(() => {
-        const savedCart = localStorage.getItem('bd_socks_cart');
-        return savedCart ? JSON.parse(savedCart) : [];
+        try {
+            const saved: unknown = JSON.parse(localStorage.getItem('bd_socks_cart') || '[]');
+            if (!Array.isArray(saved)) return [];
+            return saved.flatMap((item) => {
+                if (!item || typeof item !== 'object') return [];
+                const product = products.find((product) => product.id === item.id);
+                if (!product || !Number.isInteger(item.quantity) || item.quantity < 1) return [];
+                if (product.sizes.length && !product.sizes.includes(item.selectedSize)) return [];
+                return [{ ...product, quantity: item.quantity, selectedSize: item.selectedSize }];
+            });
+        } catch { return []; }
     });
     const [isCartOpen, setIsCartOpen] = useState(false);
 
     useEffect(() => {
-        localStorage.setItem('bd_socks_cart', JSON.stringify(cart));
+        try { localStorage.setItem('bd_socks_cart', JSON.stringify(cart)); } catch { /* El carrito sigue disponible en esta sesión. */ }
     }, [cart]);
 
     // 2. Lógica del Carrito

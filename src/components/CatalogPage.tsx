@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faExpand, faCartPlus, faXmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import productsData from '../products.json';
+import { useContent } from '../content/ContentContext';
 
 interface Product {
   id: number;
@@ -215,6 +215,7 @@ const ProductCard: React.FC<{
 };
 
 const CatalogPage = ({ addToCart }: CatalogPageProps) => {
+  const { products: productsData } = useContent();
   const [preview, setPreview] = useState<PreviewState | null>(null);
 
   useEffect(() => {

@@ -1,4 +1,7 @@
+import { useContent } from '../content/ContentContext';
+
 const Philosophy = () => {
+  const { images } = useContent();
   return (
     <section id="about" className="py-32 px-6 bg-[#F1EFE9]">
       <div className="max-w-7xl mx-auto">
@@ -7,8 +10,8 @@ const Philosophy = () => {
             <div className="grid grid-cols-2 gap-4">
               <figure>
                 <img
-                  src="/nosotros1.jpg"
-                  alt="Colección de medias premium BD SOCKS en algodón orgánico"
+                  src={images['philosophy.1']?.src}
+                  alt={images['philosophy.1']?.alt || 'Colección de medias premium BD SOCKS en algodón orgánico'}
                   title="Medias Premium de Algodón"
                   className="rounded-2xl shadow-xl w-full object-cover"
                   loading="lazy"
@@ -20,8 +23,8 @@ const Philosophy = () => {
 
               <figure>
                 <img
-                  src="/nosotros2.webp"
-                  alt="Variedad de calcetines y medias orgánicas con 200 hilos"
+                  src={images['philosophy.2']?.src}
+                  alt={images['philosophy.2']?.alt || 'Variedad de calcetines y medias orgánicas con 200 hilos'}
                   title="Medias Orgánicas 200 Hilos"
                   className="rounded-2xl shadow-xl mt-12 w-full object-cover"
                   loading="lazy"

@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import productsData from '../products.json';
+import { useContent } from '../content/ContentContext';
 
 const FeaturedProducts = () => {
+  const products = useContent().products.filter((product) => product.is_featured);
+  if (products.length === 0) return null;
   return (
     <section className="py-32 px-6 bg-white" aria-labelledby="featured-title">
       <div className="max-w-7xl mx-auto">
@@ -22,7 +24,7 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
-          {productsData.slice(0, 3).map((product) => (
+          {products.map((product) => (
             <Link
               key={product.id}
               to="/catalogo"

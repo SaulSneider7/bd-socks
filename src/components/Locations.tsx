@@ -1,159 +1,10 @@
+import { useContent } from '../content/ContentContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
 const Locations = () => {
-  const locations = [
-    // {
-    //   title: "Cencosud Retail",
-    //   logo: "/cenco-logo.jpeg",
-    //   items: [
-    //     {
-    //       label: "C.C. Plaza Lima Sur - Chorrillos",
-    //       href: "https://maps.app.goo.gl/BPnJozvraXRtLJiU6"
-    //     },
-    //     {
-    //       label: "Cenco Metro Canadá",
-    //       href: "https://maps.app.goo.gl/S7tGTgXpYoW46Gjb6"
-    //     }
-    //   ]
-    // },
-    // {
-    //   title: "MNK Store",
-    //   logo: "/mnk-logo.png",
-    //   items: [
-    //     {
-    //       label: "CC. El Polo 2 Tda. B209 - Surco",
-    //       href: "https://maps.app.goo.gl/p5fyWPKwHhuQvpJz6"
-    //     },
-    //     {
-    //       label: "Av. Cavenecia 225 Tda. 111 - San Isidro",
-    //       href: "https://maps.app.goo.gl/8RhvC8H6tLUEAjYk9"
-    //     }
-    //   ]
-    // },
-
-    {
-      title: "Tienda Barbadens",
-      logo: "/barbadens-logo.webp",
-      items: [
-        {
-          label: "Ca. Chinchón 944 San Isidro",
-          href: "https://maps.app.goo.gl/TQRsNu17YyJbUCBB8"
-        },
-        {
-          label: "Circunvalación Golf Los Incas 170 Surco",
-          href: "Av. Club Golf los Incas 170, Santiago de Surco 15023"
-        }
-      ]
-    },
-
-    {
-      title: "Tienda Japy Detalles y Globos",
-      logo: "/japy-logo.webp",
-      items: [
-        {
-          label: "Camino Real 485 San Isidro, Lima, Lima",
-          href: "https://maps.app.goo.gl/LUpS6qctswgSNBJ1A"
-        }
-      ]
-    },
-
-    {
-      title: "Tienda Anel Joyeria",
-      logo: "/anel-logo.webp",
-      items: [
-        {
-          label: "Pje. Porta 115, Tienda 1 , MIRAFLORES 15074, Lima",
-          href: "https://maps.app.goo.gl/oz7jmT8UyBP5yULj8"
-        }
-      ]
-    },
-
-    {
-      title: "Tienda Ojos de Luna",
-      logo: "/ojos-de-luna-logo.webp",
-      items: [
-        {
-          label: "La Molina | CC La Rotonda 2050",
-          href: "https://maps.app.goo.gl/TGFtocgerTMcnvmp8"
-        }
-      ]
-    },
-
-    {
-      title: "Tienda 4Essen",
-      logo: "/4essen-logo.webp",
-      items: [
-        {
-          label: "Av. Conquistadores 489 - San Isidro",
-          href: "https://maps.app.goo.gl/CyF9yoCXEJcMnxYh9"
-        }
-      ]
-    },
-
-    {
-      title: "Tienda Amavia",
-      logo: "/amavia-logo.webp",
-      items: [
-        {
-          label: "Avenida Juan Pablo II 417 ref. frente a la segunda puerta de la UNT.  - Trujillo",
-          href: "https://maps.app.goo.gl/mr8RUrBJngbjBFKi9"
-        }
-      ]
-    },
-
-    {
-      title: "Tienda Malena Concept",
-      logo: "/malena-logo.webp",
-      items: [
-        {
-          label: "Calle La Arboleda 771 -California - Trujillo.",
-          href: "https://maps.app.goo.gl/GqCxL6RqVzXAR9hQ8"
-        }
-      ]
-    },
-    // {
-    //   title: "HOLIDAY'S KIDS",
-    //   logo: "/holiday-logo.png",
-    //   items: [
-    //     {
-    //       label: "Showroom La Molina",
-    //       href: "https://maps.app.goo.gl/L7ukZrLVoviJ5UYc6"
-    //     }
-    //   ]
-    // },
-    {
-      title: "CocoDeli concept",
-      logo: "/cocodeli-logo.webp",
-      items: [
-        {
-          label: "Jr. Cusco 202 - Ayacucho",
-          href: "https://maps.app.goo.gl/71HKg4cdUx53s5vC7"
-        }
-      ]
-    },
-    {
-      title: "LOLLIPOPS",
-      logo: "/lollipops-logo.webp",
-      items: [
-        {
-          label: "Av. Larco 345 Tda M2 - Miraflores",
-          href: "https://maps.app.goo.gl/wiT87LnTRQeoUyeh7"
-        }
-      ]
-    },
-    {
-      title: "MAGNA",
-      logo: "/magna-logo.webp",
-      items: [
-        {
-          label: "C.C. Caminos del Inca  Tda. 75 2do piso - Surco",
-          href: "https://maps.app.goo.gl/pr2ibx84CCMp8RrcA"
-        }
-      ]
-    }
-  ];
+  const { locations, mainLocation } = useContent();
 
   return (
     <section id="locations" className="py-32 bg-[#F1EFE9] px-6">
@@ -176,7 +27,7 @@ const Locations = () => {
               <div className="h-full rounded-[2rem] bg-white/95 backdrop-blur-sm px-8 py-9 flex flex-col">
                 <div className="flex items-center justify-center h-24 mb-8">
                   <img
-                    src={loc.logo}
+                    src={loc.logo || undefined}
                     alt={loc.title}
                     className="max-h-full max-w-[160px] object-contain transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
@@ -227,7 +78,7 @@ const Locations = () => {
 
 
         {/* Physical Store Section */}
-        <section className="mt-32">
+        {mainLocation && <section className="mt-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -241,7 +92,7 @@ const Locations = () => {
               </p>
 
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1A1A1A] leading-tight">
-                Nuestra Tienda
+                {mainLocation.title}
               </h3>
 
               <p className="mt-5 text-base md:text-lg text-[#1A1A1A]/60 leading-relaxed">
@@ -265,7 +116,7 @@ const Locations = () => {
                   </p>
 
                   <p className="text-2xl md:text-3xl font-serif text-[#1A1A1A]">
-                    Lima, Perú
+                    {mainLocation.items.map((item) => <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="block hover:underline">{item.label}</a>)}
                   </p>
 
                   <p className="mt-2 text-sm md:text-base text-[#1A1A1A]/55">
@@ -275,7 +126,7 @@ const Locations = () => {
               </div>
             </div>
           </motion.div>
-        </section>
+        </section>}
       </div>
     </section>
   );

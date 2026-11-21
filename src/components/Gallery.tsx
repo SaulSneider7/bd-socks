@@ -1,4 +1,5 @@
 import React from "react";
+import { useContent } from '../content/ContentContext';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -25,6 +26,7 @@ const galleryItems: GalleryItem[] = [
 ];
 
 const Gallery: React.FC = () => {
+    const { images } = useContent();
     return (
         <section id="gallery" className="py-20 md:py-24 bg-[#F9F7F2]" aria-labelledby="gallery-title">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -58,8 +60,8 @@ const Gallery: React.FC = () => {
                             itemType="https://schema.org/ImageObject"
                         >
                             <img
-                                src={item.src}
-                                alt={item.alt}
+                                src={images[`gallery.${item.id}`]?.src}
+                                alt={images[`gallery.${item.id}`]?.alt || item.alt}
                                 loading="lazy"
                                 itemProp="contentUrl"
                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"

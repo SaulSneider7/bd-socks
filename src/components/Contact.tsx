@@ -3,7 +3,10 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
+import { useContent } from '../content/ContentContext';
+
 const Contact = () => {
+  const { images } = useContent();
   const phoneNumber = "51967395991";
   const message = encodeURIComponent("¡Hola BD SOCKS! Me gustaría recibir más información.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -63,7 +66,7 @@ const Contact = () => {
 
         <div
           className="text-white p-12 rounded-[2rem] relative overflow-hidden flex flex-col justify-center items-center text-center shadow-2xl bg-cover bg-center"
-          style={{ backgroundImage: "url('/bg-contact2.webp')" }}
+          style={{ backgroundImage: images['contact.1'] ? `url("${images['contact.1'].src}")` : undefined }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
 

@@ -1,0 +1,647 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Crema Fit",
+      "price": 24,
+      "description": "Cod. 1090201",
+      "image": "/1.webp",
+      "images": [
+        "/1.webp",
+        "/medias_crema_fit_1.webp",
+        "/medias_crema_fit_2.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": true
+    },
+    {
+      "id": 2,
+      "name": "Jade Tricolor",
+      "price": 24,
+      "description": "Cod. 1050302",
+      "image": "/2.webp",
+      "images": [
+        "/2.webp",
+        "/Jade_Tricolor_2.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": true
+    },
+    {
+      "id": 3,
+      "name": "Blend Socks",
+      "price": 24,
+      "description": "Cod. 1080401",
+      "image": "/3.webp",
+      "images": [
+        "/3.webp",
+        "/blend_socks_1.webp",
+        "/blend_socks_2.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": true
+    },
+    {
+      "id": 4,
+      "name": "Beige Vibe",
+      "price": 24,
+      "description": "Cod. 1060301",
+      "image": "/4.webp",
+      "images": [
+        "/4.webp",
+        "/Beige_vibe2.webp",
+        "/Beige_Vibe.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 5,
+      "name": "Base Socks",
+      "price": 24,
+      "description": "Cod. 1030303",
+      "image": "/5.webp",
+      "images": [
+        "/5.webp",
+        "/Base_Socks.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 6,
+      "name": "Blanco Step",
+      "price": 24,
+      "description": "Cod. 1020303",
+      "image": "/Blanco_Step_1.webp",
+      "images": [
+        "/Blanco_Step_1.webp",
+        "/Blanco_Step_2.webp",
+        "/Blanco_Step_3.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 7,
+      "name": "Avo Low Cut",
+      "price": 19,
+      "description": "Cod. 1010102",
+      "image": "/7.webp",
+      "images": [
+        "/7.webp",
+        "/avo_low_cute.webp",
+        "/avo_low_cute_2.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 8,
+      "name": "Zebra Carina",
+      "price": 19,
+      "description": "Cod. 1040102",
+      "image": "/8.webp",
+      "images": [
+        "/8.webp",
+        "/Zebra_2.webp",
+        "/Zebra_3.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 9,
+      "name": "Lumin Socks",
+      "price": 24,
+      "description": "Cod. 1070404",
+      "image": "/9.webp",
+      "images": [
+        "/9.webp",
+        "/medias_amarillas.webp"
+      ],
+      "sizes": [
+        "36/40"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 10,
+      "name": "Ankle amore",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/Ankle_amore_1.webp",
+      "images": [
+        "/Ankle_amore_1.webp",
+        "/Ankle_amore_2.webp",
+        "/Ankle_amore_3.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 11,
+      "name": "Ankle Blue Cube",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_blue_cube_1.webp",
+      "images": [
+        "/ankle_blue_cube_1.webp",
+        "/ankle_blue_cube_2.webp",
+        "/ankle_blue_cube_3.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 12,
+      "name": "Ankle Black Cube",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_black_cube_1.webp",
+      "images": [
+        "/ankle_black_cube_1.webp",
+        "/ankle_black_cube_2.webp",
+        "/ankle_black_cube_3.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 13,
+      "name": "Ankle Coco Dog",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_coco_dog_1.webp",
+      "images": [
+        "/ankle_coco_dog_1.webp",
+        "/ankle_coco_dog_2.webp",
+        "/ankle_coco_dog_3.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 14,
+      "name": "Ankle Blue Puppy",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_blue_puppy_1.webp",
+      "images": [
+        "/ankle_blue_puppy_1.webp",
+        "/ankle_blue_puppy_2.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 15,
+      "name": "Ankle Geo Pink",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_geo_pink_1.webp",
+      "images": [
+        "/ankle_geo_pink_1.webp",
+        "/ankle_geo_pink_2.webp",
+        "/ankle_geo_pink_3.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 16,
+      "name": "Ankle Happy Panda",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_happy_panda_1.webp",
+      "images": [
+        "/ankle_happy_panda_1.webp",
+        "/ankle_happy_panda_2.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 18,
+      "name": "Ankle Sketch Pop",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_sketch_pop_1.webp",
+      "images": [
+        "/ankle_sketch_pop_1.webp",
+        "/ankle_sketch_pop_2.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 19,
+      "name": "Ankle Red Cube",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_red_cube_1.webp",
+      "images": [
+        "/ankle_red_cube_1.webp",
+        "/ankle_red_cube_2.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 20,
+      "name": "Ankle Monkey Fun",
+      "price": 19,
+      "description": "Cod. 1070404",
+      "image": "/ankle_monkey_fun_1.webp",
+      "images": [
+        "/ankle_monkey_fun_1.webp",
+        "/ankle_monkey_fun_2.webp",
+        "/ankle_monkey_fun_3.webp"
+      ],
+      "sizes": [
+        "38/42"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 21,
+      "name": "Ribbed Blue Sea",
+      "price": 24,
+      "description": "Cod. 1070404",
+      "image": "/ribbed_blue_sea_1.webp",
+      "images": [
+        "/ribbed_blue_sea_1.webp",
+        "/ribbed_blue_sea_2.webp"
+      ],
+      "sizes": [
+        "37/40",
+        "41/43",
+        "44/46"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 22,
+      "name": "Ribbed Coral Pop",
+      "price": 24,
+      "description": "Cod. 1070404",
+      "image": "/ribbed_coral_pop_1.webp",
+      "images": [
+        "/ribbed_coral_pop_1.webp",
+        "/ribbed_coral_pop_2.webp"
+      ],
+      "sizes": [
+        "37/41",
+        "42/46"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 23,
+      "name": "Ribbed Light Blue",
+      "price": 24,
+      "description": "Cod. 1070404",
+      "image": "/ribbed_light_blue_1.webp",
+      "images": [
+        "/ribbed_light_blue_1.webp",
+        "/ribbed_light_blue_2.webp",
+        "/ribbed_light_blue_3.webp"
+      ],
+      "sizes": [
+        "37/40",
+        "42/46"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 24,
+      "name": "Ribbed Sunset",
+      "price": 24,
+      "description": "Cod. 1070404",
+      "image": "/Ribbed_Sunset_1.webp",
+      "images": [
+        "/Ribbed_Sunset_1.webp",
+        "/Ribbed_Sunset_2.webp"
+      ],
+      "sizes": [
+        "37/40",
+        "44/46"
+      ],
+      "is_featured": false
+    },
+    {
+      "id": 25,
+      "name": "Ribbed",
+      "price": 24,
+      "description": "Cod. 1070404",
+      "image": "/Ribbed_1.webp",
+      "images": [
+        "/Ribbed_1.webp",
+        "/Ribbed_2.webp",
+        "/Ribbed_3.webp"
+      ],
+      "sizes": [
+        "37/40",
+        "41/43",
+        "44/46"
+      ],
+      "is_featured": false
+    }
+  ],
+  "media": [
+    {
+      "section": "hero",
+      "slot": 1,
+      "path": "/portada_1.webp",
+      "alt": "BD SOCKS Premium",
+      "sort_order": 1
+    },
+    {
+      "section": "hero",
+      "slot": 2,
+      "path": "/portada_2.webp",
+      "alt": "Colección de calcetines BD SOCKS",
+      "sort_order": 2
+    },
+    {
+      "section": "hero",
+      "slot": 3,
+      "path": "/portada_3.webp",
+      "alt": "Diseños BD SOCKS",
+      "sort_order": 3
+    },
+    {
+      "section": "hero",
+      "slot": 4,
+      "path": "/portada_4.webp",
+      "alt": "Colección de medias BD SOCKS",
+      "sort_order": 4
+    },
+    {
+      "section": "philosophy",
+      "slot": 1,
+      "path": "/nosotros1.jpg",
+      "alt": "Colección de medias premium BD SOCKS",
+      "sort_order": 1
+    },
+    {
+      "section": "philosophy",
+      "slot": 2,
+      "path": "/nosotros2.webp",
+      "alt": "Presentación de empaque premium BD SOCKS",
+      "sort_order": 2
+    },
+    {
+      "section": "gallery",
+      "slot": 1,
+      "path": "/galeria1.webp",
+      "alt": "Medias premium BD SOCKS estilo alto en algodón orgánico",
+      "sort_order": 1
+    },
+    {
+      "section": "gallery",
+      "slot": 2,
+      "path": "/galeria2.webp",
+      "alt": "Calcetines de vestir diseño cuadrado 200 hilos",
+      "sort_order": 2
+    },
+    {
+      "section": "gallery",
+      "slot": 3,
+      "path": "/galeria3.webp",
+      "alt": "Tendencias en medias orgánicas de alta calidad",
+      "sort_order": 3
+    },
+    {
+      "section": "gallery",
+      "slot": 4,
+      "path": "/galeria4.webp",
+      "alt": "Medias minimalistas BD SOCKS colección esencial",
+      "sort_order": 4
+    },
+    {
+      "section": "gallery",
+      "slot": 5,
+      "path": "/galeria5.webp",
+      "alt": "Calcetines urbanos con tejido de 200 hilos",
+      "sort_order": 5
+    },
+    {
+      "section": "gallery",
+      "slot": 6,
+      "path": "/galeria6.webp",
+      "alt": "Detalle de costuras y acabado de medias premium",
+      "sort_order": 6
+    },
+    {
+      "section": "gallery",
+      "slot": 7,
+      "path": "/galeria7.webp",
+      "alt": "Nueva colección de medias orgánicas exclusivas",
+      "sort_order": 7
+    },
+    {
+      "section": "gallery",
+      "slot": 8,
+      "path": "/galeria8.webp",
+      "alt": "Catálogo de calcetines premium BD SOCKS",
+      "sort_order": 8
+    },
+    {
+      "section": "instagram",
+      "slot": 1,
+      "path": "/galeria5.webp",
+      "alt": "Outfits con medias premium de 200 hilos",
+      "sort_order": 1
+    },
+    {
+      "section": "instagram",
+      "slot": 2,
+      "path": "/instagram2.png",
+      "alt": "Diseño de calcetines orgánicos BD SOCKS",
+      "sort_order": 2
+    },
+    {
+      "section": "instagram",
+      "slot": 3,
+      "path": "/instagram3.webp",
+      "alt": "Comunidad usando medias de algodón orgánico",
+      "sort_order": 3
+    },
+    {
+      "section": "instagram",
+      "slot": 4,
+      "path": "/instagram4.webp",
+      "alt": "Comunidad usando medias de algodón orgánico",
+      "sort_order": 4
+    },
+    {
+      "section": "instagram",
+      "slot": 5,
+      "path": "/instagram5.webp",
+      "alt": "Comunidad usando medias de algodón orgánico",
+      "sort_order": 5
+    },
+    {
+      "section": "instagram",
+      "slot": 6,
+      "path": "/instagram6_2.webp",
+      "alt": "Comunidad usando medias de algodón orgánico",
+      "sort_order": 6
+    },
+    {
+      "section": "contact",
+      "slot": 1,
+      "path": "/bg-contact2.webp",
+      "alt": "Contacto BD SOCKS",
+      "sort_order": 1
+    },
+    {
+      "section": "branding",
+      "slot": 1,
+      "path": "/logo_bd.png",
+      "alt": "BD SOCKS",
+      "sort_order": 1
+    }
+  ],
+  "locations": [
+    {
+      "title": "Tienda Barbadens",
+      "logo": "/barbadens-logo.webp",
+      "items": [
+        {
+          "label": "Ca. Chinchón 944 San Isidro",
+          "href": "https://maps.app.goo.gl/TQRsNu17YyJbUCBB8"
+        },
+        {
+          "label": "Circunvalación Golf Los Incas 170 Surco",
+          "href": "https://www.google.com/maps/search/?api=1&query=Av.%20Club%20Golf%20los%20Incas%20170%2C%20Santiago%20de%20Surco%2015023"
+        }
+      ]
+    },
+    {
+      "title": "Tienda Japy Detalles y Globos",
+      "logo": "/japy-logo.webp",
+      "items": [
+        {
+          "label": "Camino Real 485 San Isidro, Lima, Lima",
+          "href": "https://maps.app.goo.gl/LUpS6qctswgSNBJ1A"
+        }
+      ]
+    },
+    {
+      "title": "Tienda Anel Joyeria",
+      "logo": "/anel-logo.webp",
+      "items": [
+        {
+          "label": "Pje. Porta 115, Tienda 1 , MIRAFLORES 15074, Lima",
+          "href": "https://maps.app.goo.gl/oz7jmT8UyBP5yULj8"
+        }
+      ]
+    },
+    {
+      "title": "Tienda Ojos de Luna",
+      "logo": "/ojos-de-luna-logo.webp",
+      "items": [
+        {
+          "label": "La Molina | CC La Rotonda 2050",
+          "href": "https://maps.app.goo.gl/TGFtocgerTMcnvmp8"
+        }
+      ]
+    },
+    {
+      "title": "Tienda 4Essen",
+      "logo": "/4essen-logo.webp",
+      "items": [
+        {
+          "label": "Av. Conquistadores 489 - San Isidro",
+          "href": "https://maps.app.goo.gl/CyF9yoCXEJcMnxYh9"
+        }
+      ]
+    },
+    {
+      "title": "Tienda Amavia",
+      "logo": "/amavia-logo.webp",
+      "items": [
+        {
+          "label": "Avenida Juan Pablo II 417 ref. frente a la segunda puerta de la UNT.  - Trujillo",
+          "href": "https://maps.app.goo.gl/mr8RUrBJngbjBFKi9"
+        }
+      ]
+    },
+    {
+      "title": "Tienda Malena Concept",
+      "logo": "/malena-logo.webp",
+      "items": [
+        {
+          "label": "Calle La Arboleda 771 -California - Trujillo.",
+          "href": "https://maps.app.goo.gl/GqCxL6RqVzXAR9hQ8"
+        }
+      ]
+    },
+    {
+      "title": "CocoDeli concept",
+      "logo": "/cocodeli-logo.webp",
+      "items": [
+        {
+          "label": "Jr. Cusco 202 - Ayacucho",
+          "href": "https://maps.app.goo.gl/71HKg4cdUx53s5vC7"
+        }
+      ]
+    },
+    {
+      "title": "LOLLIPOPS",
+      "logo": "/lollipops-logo.webp",
+      "items": [
+        {
+          "label": "Av. Larco 345 Tda M2 - Miraflores",
+          "href": "https://maps.app.goo.gl/wiT87LnTRQeoUyeh7"
+        }
+      ]
+    },
+    {
+      "title": "MAGNA",
+      "logo": "/magna-logo.webp",
+      "items": [
+        {
+          "label": "C.C. Caminos del Inca  Tda. 75 2do piso - Surco",
+          "href": "https://maps.app.goo.gl/pr2ibx84CCMp8RrcA"
+        }
+      ]
+    }
+  ]
+}

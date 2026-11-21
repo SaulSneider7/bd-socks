@@ -1,5 +1,29 @@
 # React + TypeScript + Vite
 
+## Publicar en bdecostore.com
+
+Sigue [los pasos específicos para tu hosting cPanel](deployment/PASOS-BDECOSTORE.md). La entrega actual está en `deployment/releases/20261121-194649/`, con ambos ZIP, el SQL inicial y las credenciales nuevas. La carpeta pública confirmada es `/home1/emesmaco/bdecostore.com/`; Laravel se instala en `/home1/emesmaco/bd-socks-app/`.
+
+## Desarrollo local con XAMPP (Windows)
+
+Inicia MySQL en XAMPP. Desde la carpeta del proyecto, abre dos terminales:
+
+```bash
+# Terminal 1: backend Laravel
+npm run dev:api
+```
+
+```bash
+# Terminal 2: frontend React
+npm run dev
+```
+
+Abre la URL que indique Vite (normalmente `http://localhost:5173`). Mantén ambas terminales abiertas. El panel está en `http://127.0.0.1:8000/admin`.
+
+El comando `dev:api` usa PHP de `C:/xampp/php/php.exe` y la configuración local `.tools/php.ini`. Las dependencias instaladas del backend requieren PHP 8.4.1 o superior.
+
+Si aparece `http proxy error: /api/content`, comprueba que la terminal del backend siga activa y que `http://127.0.0.1:8000/api/content` responda. Iniciar Apache no inicia el servidor Laravel del puerto 8000.
+
 ## Imágenes de productos
 
 Cada producto debe conservar `image` como imagen principal. Para mostrar una galería en el catálogo, agrega `images` con todas las rutas, incluida la principal:

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useContent } from '../content/ContentContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +20,7 @@ const instagramPosts = [
 ];
 
 const InstagramFeed = () => {
+    const { images } = useContent();
     const instagramUrl = "https://www.instagram.com/bdsocks.latam/?hl=es";
 
     return (
@@ -72,8 +74,8 @@ const InstagramFeed = () => {
                             className="group relative aspect-square bg-[#F1EFE9] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
                         >
                             <img
-                                src={post.image}
-                                alt={post.alt}
+                                src={images[`instagram.${post.id}`]?.src}
+                                alt={images[`instagram.${post.id}`]?.alt || post.alt}
                                 loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                                 referrerPolicy="no-referrer"
